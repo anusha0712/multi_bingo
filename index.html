@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Sport & TV Bingo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&display=swap" rel="stylesheet">
+    <script src="game_data_file.js"></script>
+    <style>
+
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --cricket: #ff6b35;
+            --tennis: #22c55e;
+            --f1: #dc2626;
+            --tv: #8b5cf6;
+        }
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: "Bebas Neue", sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #0c1420 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+    
+        .header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+    
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+    
+        .logo {
+            position: absolute;
+            left: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    
+        .sport-selector {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--bg-secondary);
+            padding: 0.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    
+        .header-actions {
+            position: absolute;
+            right: 0;
+            display: flex;
+            gap: 0.5rem;
+        }
+    
+        .sport-btn {
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: transparent;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    
+        .sport-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+    
+        .sport-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+    
+        .btn-icon {
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+    
+        .btn-icon:hover {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+    
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+    
+        .player-section {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+    
+        .player-display {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            min-height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0;
+            gap: 2rem;
+        }
+    
+        .btn {
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    
+        .btn-skip {
+            background: var(--error);
+            color: white;
+        }
+    
+        .btn-skip:hover {
+            background: #dc2626;
+        }
+    
+        .btn-wildcard {
+            background: var(--warning);
+            color: var(--bg-primary);
+        }
+    
+        .btn-wildcard:hover:not(:disabled) {
+            background: #f59e0b;
+        }
+    
+        .btn-wildcard:disabled {
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+        }
+    
+        .remaining {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    
+        .bingo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+    
+        .bingo-card {
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.3;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .bingo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+    
+        .bingo-card:hover::before {
+            left: 100%;
+        }
+    
+        .bingo-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+    
+        .bingo-card.completed {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+    
+        .bingo-card.completed::before {
+            display: none;
+        }
+    
+        .stats-panel {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+    
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+    
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+    
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            animation: fadeIn 0.2s ease;
+        }
+    
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+    
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+    
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .rules-content {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    
+        .rules-content h3 {
+            color: var(--accent);
+            margin: 1rem 0 0.5rem 0;
+            font-weight: 600;
+        }
+    
+        .rules-content p,
+        .rules-content li {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+            
+        }
+    
+        .rules-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    
+        .completion-message {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+    
+        .timer {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+    
+        .timer.active {
+            display: flex;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+    
+            to {
+                opacity: 1;
+            }
+        }
+    
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+    
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                position: static;
+            }
+    
+            .logo {
+                position: static;
+                order: 1;
+                margin-bottom: 1rem;
+            }
+    
+            .sport-selector {
+                order: 2;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+    
+            .header-actions {
+                position: static;
+                order: 3;
+            }
+
+            .player-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+    
+            .player-display {
+                font-size: 3.5rem;
+                margin: 0.5rem 0 1rem 0;
+                min-height: 3.5rem;
+            }
+    
+            .controls {
+                flex-direction: row;
+                gap: 0.75rem;
+                margin: 0.5rem 0;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+                flex: 0 0 auto;
+                min-width: 90px;
+            }
+
+            .remaining {
+                font-size: 0.8rem;
+                flex: 1;
+                justify-content: center;
+                margin: 0;
+            }
+    
+            .bingo-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.5rem;
+            }
+    
+            .bingo-card {
+                min-height: 4rem;
+                font-size: 0.8rem;
+                padding: 0.5rem;
+            }
+
+            .main-container {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span>🎯</span>
+                <span>Kanoi's 25th Bday Bingo!!</span>
+            </div>
+            
+            <div class="sport-selector">
+                <button class="sport-btn active" data-sport="cricket">
+                    🏏 Cricket
+                </button>
+                <button class="sport-btn" data-sport="tennis">
+                    🎾 Tennis
+                </button>
+                <button class="sport-btn" data-sport="f1">
+                    🏎️ F1
+                </button>
+                <button class="sport-btn" data-sport="tv">
+                    📺 TV Shows
+                </button>
+            </div>
+
+            <div class="header-actions">
+                <button class="btn-icon" onclick="resetGame()" title="New Game">
+                    🔄
+                </button>
+                <button class="btn-icon" onclick="toggleTimer()" title="Toggle Timer">
+                    ⏱️
+                </button>
+                <button class="btn-icon" onclick="showStats()" title="Statistics">
+                    📊
+                </button>
+                <button class="btn-icon" onclick="showRules()" title="Rules">
+                    ❓
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="player-section">
+            <div class="timer" id="timer">
+                <span>⏱️</span>
+                <span id="timerDisplay">00:00</span>
+            </div>
+            <div class="player-display" id="currentPlayer">Select a sport to start!</div>
+            <div class="controls">
+                <button class="btn btn-skip" onclick="skipPlayer()">
+                    ⏭️ Skip
+                </button>
+                <div class="remaining" id="remaining">
+                    <span>👥</span>
+                    <span>Players ready</span>
+                </div>
+                <button class="btn btn-wildcard" id="wildcardBtn" onclick="useWildcard()">
+                    🃏 Wildcard
+                </button>
+            </div>
+        </div>
+
+        <div class="bingo-grid" id="bingoGrid"></div>
+
+        <div class="completion-message" id="completionMessage">
+            🎉 Congratulations! Bingo Complete! 🎉
+            <br><br>
+            <button class="btn" onclick="resetGame()" style="background: white; color: var(--success); margin-top: 1rem;">
+                🔄 Play Again
+            </button>
+        </div>
+
+
+    </main>
+
+    <!-- Rules Modal -->
+    <div class="modal" id="rulesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">📋 How to Play</h2>
+                <button class="close-btn" onclick="hideRules()">&times;</button>
+            </div>
+            <div class="rules-content">
+                <h3>🎯 Objective</h3>
+                <p>Complete all 16 squares on your bingo card by correctly matching players/characters to categories.</p>
+
+                <h3>🎮 How to Play</h3>
+                <ul>
+                    <li>A random player/character appears at the top</li>
+                    <li>Click on a category square that matches this player</li>
+                    <li>If correct ✅ - the square turns green and you continue</li>
+                    <li>If wrong ❌ - the square flashes red and you get a new player</li>
+                    <li>Complete all 16 squares to win!</li>
+                </ul>
+
+                <h3>🃏 Special Actions</h3>
+                <ul>
+                    <li><strong>Skip:</strong> Avoid difficult players you don't know</li>
+                    <li><strong>Wildcard:</strong> Automatically complete any square (use once per game)</li>
+                </ul>
+
+                <h3>🏆 Strategy Tips</h3>
+                <ul>
+                    <li>Save specific categories (like "Afghan Player") for obvious matches</li>
+                    <li>Don't waste versatile players on common categories</li>
+                    <li>Skip players you're unsure about</li>
+                    <li>Use wildcard strategically for difficult categories</li>
+                </ul>
+
+                <h3>🔄 Sport Switching</h3>
+                <p>Switching between sports will start a new game and reset your progress.</p>
+
+                <h3>📊 Stats & Timer</h3>
+                <p>Track your completion time and daily progress. Export your stats to share your achievements!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Modal -->
+    <div class="modal" id="statsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">📊 Your Statistics</h2>
+                <button class="close-btn" onclick="hideStats()">&times;</button>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalGames">0</div>
+                    <div class="stat-label">Total Games</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="completedGames">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="winRate">0%</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="currentStreak">0</div>
+                    <div class="stat-label">Current Streak</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="bestTime">--:--</div>
+                    <div class="stat-label">Best Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="avgTime">--:--</div>
+                    <div class="stat-label">Avg Time</div>
+                </div>
+            </div>
+            <div style="margin-top: 1rem;">
+                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Daily Progress</h3>
+                <div id="dailyProgress" style="color: var(--text-secondary);"></div>
+            </div>
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <button class="btn" onclick="exportStats()" style="background: var(--success); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">
+                    📤 Export My Stats
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game State
+        let currentSport = 'cricket';
+        let currentPlayer = '';
+        let availablePlayers = [];
+        let bingoCards = [];
+        let completedCards = [];
+        let wildcardUsed = false;
+        let gameStartTime = null;
+        let timerInterval = null;
+        let timerActive = false;
+
+        // Check if game data is loaded
+        function checkGameData() {
+            if (!window.GAME_DATA || !window.GAME_DATA.playerMatches || !window.GAME_DATA.gameCategories) {
+                console.error('Game data not loaded properly. Make sure game-data.js is accessible.');
+                document.getElementById('currentPlayer').textContent = 'Error: Game data not loaded!';
+                return false;
+            }
+            return true;
+        }
+
+        // Game Functions
+        function initGame() {
+            if (!checkGameData()) return;
+            
+            generateBingoCards();
+            resetAvailablePlayers();
+            nextPlayer();
+            updateDisplay();
+            updateStats();
+        }
+
+        function generateBingoCards() {
+            const categories = window.GAME_DATA.gameCategories[currentSport];
+            const shuffled = [...categories].sort(() => 0.5 - Math.random());
+            bingoCards = shuffled.slice(0, 16);
+            completedCards = [];
+            wildcardUsed = false;
+            renderBingoGrid();
+        }
+
+        function resetAvailablePlayers() {
+            availablePlayers = [...Object.keys(window.GAME_DATA.playerMatches[currentSport])];
+            availablePlayers = availablePlayers.sort(() => 0.5 - Math.random());
+        }
+
+        function renderBingoGrid() {
+            const grid = document.getElementById('bingoGrid');
+            grid.innerHTML = '';
+            
+            bingoCards.forEach((category, index) => {
+                const card = document.createElement('div');
+                card.className = 'bingo-card';
+                card.textContent = category;
+                card.onclick = () => selectCard(index);
+                
+                if (completedCards.includes(index)) {
+                    card.classList.add('completed');
+                    card.onclick = null;
+                }
+                
+                grid.appendChild(card);
+            });
+        }
+
+        function nextPlayer() {
+            if (availablePlayers.length < 5) {
+                resetAvailablePlayers();
+            }
+            
+            const randomIndex = Math.floor(Math.random() * availablePlayers.length);
+            currentPlayer = availablePlayers[randomIndex];
+            availablePlayers.splice(randomIndex, 1);
+            updateDisplay();
+        }
+
+        function selectCard(cardIndex) {
+            if (completedCards.includes(cardIndex)) return;
+            
+            const selectedCategory = bingoCards[cardIndex];
+            const playerCategories = window.GAME_DATA.playerMatches[currentSport][currentPlayer] || [];
+            
+            const card = document.querySelectorAll('.bingo-card')[cardIndex];
+            
+            if (playerCategories.includes(selectedCategory)) {
+                // Correct match
+                completedCards.push(cardIndex);
+                card.style.background = 'var(--success)';
+                card.style.borderColor = 'var(--success)';
+                card.style.color = 'white';
+                
+                if (completedCards.length === 16) {
+                    completeGame();
+                    return;
+                }
+                
+                setTimeout(() => {
+                    nextPlayer();
+                    renderBingoGrid();
+                }, 800);
+            } else {
+                // Wrong match
+                card.style.background = 'var(--error)';
+                card.style.borderColor = 'var(--error)';
+                setTimeout(() => {
+                    card.style.background = 'var(--bg-card)';
+                    card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                    nextPlayer();
+                }, 800);
+            }
+        }
+
+        function skipPlayer() {
+            nextPlayer();
+        }
+
+        function useWildcard() {
+            if (wildcardUsed) return;
+            
+            wildcardUsed = true;
+            const availableCards = bingoCards.map((_, index) => index).filter(i => !completedCards.includes(i));
+            
+            if (availableCards.length > 0) {
+                const randomCard = availableCards[Math.floor(Math.random() * availableCards.length)];
+                completedCards.push(randomCard);
+                
+                const card = document.querySelectorAll('.bingo-card')[randomCard];
+                card.style.background = 'var(--warning)';
+                card.style.borderColor = 'var(--warning)';
+                card.style.color = 'var(--bg-primary)';
+                
+                setTimeout(() => {
+                    card.style.background = 'var(--success)';
+                    card.style.borderColor = 'var(--success)';
+                    card.style.color = 'white';
+                }, 500);
+                
+                if (completedCards.length === 16) {
+                    completeGame();
+                    return;
+                }
+            }
+            
+            setTimeout(() => {
+                nextPlayer();
+                renderBingoGrid();
+                updateDisplay();
+            }, 1000);
+        }
+
+        function completeGame() {
+            document.getElementById('completionMessage').style.display = 'block';
+            stopTimer();
+            saveGameStats(true);
+            updateStats();
+        }
+
+        function resetGame() {
+            completedCards = [];
+            wildcardUsed = false;
+            document.getElementById('completionMessage').style.display = 'none';
+            generateBingoCards();
+            resetAvailablePlayers();
+            nextPlayer();
+            startTimer();
+            saveGameStats(false);
+        }
+
+        function switchSport(sport) {
+            currentSport = sport;
+            
+            document.querySelectorAll('.sport-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-sport="${sport}"]`).classList.add('active');
+            
+            resetGame();
+        }
+
+        function updateDisplay() {
+            document.getElementById('currentPlayer').textContent = currentPlayer || 'Select a sport to start!';
+            document.getElementById('remaining').innerHTML = `<span>👥</span><span>${availablePlayers.length} players remaining</span>`;
+            
+            const wildcardBtn = document.getElementById('wildcardBtn');
+            wildcardBtn.disabled = wildcardUsed;
+            wildcardBtn.textContent = wildcardUsed ? '🃏 Used' : '🃏 Wildcard';
+        }
+
+        // Timer Functions
+        function startTimer() {
+            if (!timerActive) return;
+            
+            gameStartTime = Date.now();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        function updateTimer() {
+            if (!gameStartTime) return;
+            
+            const elapsed = Math.floor((Date.now() - gameStartTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            
+            document.getElementById('timerDisplay').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function toggleTimer() {
+            timerActive = !timerActive;
+            const timer = document.getElementById('timer');
+            
+            if (timerActive) {
+                timer.classList.add('active');
+                startTimer();
+            } else {
+                timer.classList.remove('active');
+                stopTimer();
+            }
+        }
+
+        // Stats Functions
+        function getStats() {
+            const stats = localStorage.getItem('bingoStats');
+            return stats ? JSON.parse(stats) : {
+                totalGames: 0,
+                completedGames: 0,
+                currentStreak: 0,
+                bestTime: null,
+                times: [],
+                dailyProgress: {}
+            };
+        }
+
+        function saveGameStats(completed) {
+            const stats = getStats();
+            const today = new Date().toDateString();
+            
+            if (completed) {
+                stats.completedGames++;
+                stats.currentStreak++;
+                
+                if (gameStartTime && timerActive) {
+                    const gameTime = Math.floor((Date.now() - gameStartTime) / 1000);
+                    stats.times.push(gameTime);
+                    
+                    if (!stats.bestTime || gameTime < stats.bestTime) {
+                        stats.bestTime = gameTime;
+                    }
+                }
+                
+                if (!stats.dailyProgress[today]) {
+                    stats.dailyProgress[today] = { completed: 0, total: 0 };
+                }
+                stats.dailyProgress[today].completed++;
+            } else {
+                stats.totalGames++;
+                stats.currentStreak = 0;
+                
+                if (!stats.dailyProgress[today]) {
+                    stats.dailyProgress[today] = { completed: 0, total: 0 };
+                }
+                stats.dailyProgress[today].total++;
+            }
+            
+            localStorage.setItem('bingoStats', JSON.stringify(stats));
+        }
+
+        function updateStats() {
+            const stats = getStats();
+            
+            document.getElementById('totalGames').textContent = stats.totalGames;
+            document.getElementById('completedGames').textContent = stats.completedGames;
+            document.getElementById('winRate').textContent = 
+                stats.totalGames > 0 ? Math.round((stats.completedGames / stats.totalGames) * 100) + '%' : '0%';
+            document.getElementById('currentStreak').textContent = stats.currentStreak;
+            
+            if (stats.bestTime) {
+                const minutes = Math.floor(stats.bestTime / 60);
+                const seconds = stats.bestTime % 60;
+                document.getElementById('bestTime').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+            
+            if (stats.times.length > 0) {
+                const avgTime = stats.times.reduce((a, b) => a + b, 0) / stats.times.length;
+                const minutes = Math.floor(avgTime / 60);
+                const seconds = Math.floor(avgTime % 60);
+                document.getElementById('avgTime').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }
+
+        function exportStats() {
+            const stats = getStats();
+            const exportData = {
+                summary: `🎯 Bingo Stats Summary 🎯\n\nTotal Games: ${stats.totalGames}\nCompleted: ${stats.completedGames}\nWin Rate: ${stats.totalGames > 0 ? Math.round((stats.completedGames / stats.totalGames) * 100) : 0}%\nCurrent Streak: ${stats.currentStreak}`,
+                date: new Date().toLocaleDateString(),
+                stats: stats
+            };
+            
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `bingo-stats-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Modal Functions
+        function showRules() {
+            document.getElementById('rulesModal').style.display = 'block';
+        }
+
+        function hideRules() {
+            document.getElementById('rulesModal').style.display = 'none';
+        }
+
+        function showStats() {
+            updateStats();
+            document.getElementById('statsModal').style.display = 'block';
+        }
+
+        function hideStats() {
+            document.getElementById('statsModal').style.display = 'none';
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.sport-btn').forEach(btn => {
+            btn.addEventListener('click', () => switchSport(btn.dataset.sport));
+        });
+
+        // Close modals on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+
+        // Initialize game when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initGame();
+            
+            // Show rules on first visit
+            if (!localStorage.getItem('bingoVisited')) {
+                setTimeout(() => showRules(), 500);
+                localStorage.setItem('bingoVisited', 'true');
+            }
+        });
+    </script>
+</body>
+</html>
