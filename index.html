@@ -306,6 +306,27 @@
             margin: 0 auto;
             padding: 2rem 1rem;
         }
+
+        .game-message {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .game-message.loss {
+            background: linear-gradient(135deg, var(--error) 0%, #dc2626 100%);
+        }
+
+        .game-message.win {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+        }
     
         .player-section {
             background: var(--bg-secondary);
@@ -593,19 +614,6 @@
             margin-bottom: 1rem;
         }
     
-        .completion-message {
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            display: none;
-            animation: slideIn 0.3s ease;
-        }
-    
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -841,6 +849,14 @@
     </div>
 
     <main class="main-container">
+        <div class="game-message" id="gameMessage">
+            🎉 Congratulations! Bingo Complete! 🎉
+            <br><br>
+            <button class="btn" onclick="resetGame()" style="background: white; color: var(--success); margin-top: 1rem;">
+                🔄 Play Again
+            </button>
+        </div>
+
         <div class="player-section">
             <div class="timer" id="timer" onclick="toggleTimer()" title="Click to toggle timer">
                 <span>⏱️</span>
@@ -862,14 +878,6 @@
         </div>
 
         <div class="bingo-grid" id="bingoGrid"></div>
-
-        <div class="completion-message" id="completionMessage">
-            🎉 Congratulations! Bingo Complete! 🎉
-            <br><br>
-            <button class="btn" onclick="resetGame()" style="background: white; color: var(--success); margin-top: 1rem;">
-                🔄 Play Again
-            </button>
-        </div>
     </main>
 
     <!-- Birthday Wish Modal -->
@@ -888,16 +896,16 @@
                     </div>
                     
                     <div style="color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                        I know I always say that I don’t like when you're on your phone, but if it keeps your hyperactive, fidgety
-                        brain awake for more TV - it’s a win!😈
+                        I know I always say that I don't like when you're on your phone, but if it keeps your hyperactive, fidgety
+                        brain awake for more TV - it's a win!😈
                         <br><br>
                         So this is a gift that celebrates some of the things I love about you - your capacity for simple joys, your complicated
                         brain that is so tuned to problem-solving and puzzles, your inspiring love for sports and absolute commitment to
                         athletic rigor and the insane memory that holds the most random, long-forgotten trivia and facts (that I love hearing
                         you share).
                         <br><br>
-                        This game is modeled after the football bingo you like but with some additional teaks (like female stars, wildcard
-                        entires and difficulty levels). I hope you enjoy playing it hehe
+                        This game is modeled after the football bingo you like but with some additional tweaks (like female stars, wildcard
+                        entries and difficulty levels). I hope you enjoy playing it hehe
                         <br><br>
                         Anywaaaay, HAPPIEST BIRTHDAYYY to my absolute favourite person!! I love you and I wish I was there to celebrate with you. Cannot
                         wait to witness all the dumb things you will do, now that you have a fully developed frontal lobe to help with more
@@ -922,7 +930,7 @@
             </div>
             <div class="rules-content">
                 <h3>🎯 Objective</h3>
-                <p>Complete all 16 squares on your bingo card by correctly matching players/characters to categories.</p>
+                <p>Complete all 16 squares on your bingo card by correctly matching players/characters to categories before running out of players.</p>
 
                 <h3>🎮 How to Play</h3>
                 <ul>
@@ -930,39 +938,38 @@
                     <li>A random player/character appears at the top</li>
                     <li>Click on a category square that matches this player</li>
                     <li>If correct ✅ - the square turns green and you get a new player</li>
-                    <li>If wrong ❌ - the square flashes red and you get a new player</li>
-                    <li>Complete all 16 squares to win!</li>
+                    <li>If wrong ❌ - you lose the current player AND the next player (penalty!)</li>
+                    <li>Complete all 16 squares to win, or lose when players run out!</li>
+                </ul>
+
+                <h3>⚠️ Penalty System</h3>
+                <ul>
+                    <li><strong>Skip:</strong> Lose current player, move to next player</li>
+                    <li><strong>Wrong Answer:</strong> Lose current player AND next player (double penalty!)</li>
+                    <li>Strategy matters - wrong answers are much costlier than skips</li>
+                    <li>Finite player pool - no automatic refills during game</li>
                 </ul>
 
                 <h3>🃏 Wildcard Power</h3>
                 <ul>
                     <li><strong>Click Wildcard</strong> → <strong>Click any square</strong> → That category changes to a new one</li>
                     <li>Perfect escape for overly difficult categories you don't know</li>
-                    <li>You still need to match a player to the new category</li>
+                    <li>Current player stays - you can continue matching them</li>
                     <li>Can only be used <strong>once per game</strong> - choose wisely!</li>
-                </ul>
-
-                <h3>⚡ Special Actions</h3>
-                <ul>
-                    <li><strong>Skip:</strong> Avoid difficult players you don't know</li>
-                    <li><strong>Timer:</strong> Click ⏱️ to track your completion time</li>
                 </ul>
 
                 <h3>🏆 Strategy Tips</h3>
                 <ul>
                     <li>Save specific categories (like "Afghan Player") for obvious matches</li>
-                    <li>Don't waste versatile players on common categories</li>
-                    <li>Skip players you're unsure about</li>
-                    <li>Save wildcard for the most challenging square</li>
+                    <li>Don't risk wrong answers on uncertain matches - skip instead</li>
+                    <li>Use wildcard to replace impossible categories</li>
+                    <li>Monitor your remaining player count carefully</li>
                 </ul>
 
                 <h3>🔄 Difficulty Levels</h3>
-                <p><strong>Easy:</strong> Common categories like nationalities and teams<br>
-                <strong>Medium:</strong> Mix of obvious and challenging categories<br>
-                <strong>Hard:</strong> Includes very specific trivia and achievements</p>
-
-                <h3>📊 Stats & Timer</h3>
-                <p>Track your completion time and daily progress. Challenge yourself across different difficulty levels!</p>
+                <p><strong>Easy:</strong> 45 players, broad categories (many matches per category)<br>
+                <strong>Medium:</strong> 35 players, mixed difficulty categories<br>
+                <strong>Hard:</strong> 25 players, specific categories (few matches per category)</p>
             </div>
         </div>
     </div>
@@ -1018,114 +1025,221 @@
         let currentDifficulty = 'medium';
         let currentPlayer = '';
         let activePlayerPool = [];
+        let originalPlayerPool = [];
         let bingoCards = [];
+        let reserveCategories = [];
         let completedCards = [];
         let wildcardUsed = false;
         let wildcardMode = false;
         let gameStartTime = null;
         let timerInterval = null;
         let timerActive = false;
+        let gameEnded = false;
+        let recentlyUsedCategories = [];
+        let recentlyUsedPlayers = [];
 
-        // Difficulty configurations
+        // New difficulty configurations - completely revamped
         const difficultyConfig = {
             easy: {
-                minMatches: 5,
-                maxMatches: 15,
-                playerPoolSize: 35
+                playerPoolSize: 45,      // More forgiving, more chances
+                categoryWeight: {
+                    broad: 0.7,          // 70% broad categories (8+ matches)
+                    medium: 0.25,        // 25% medium categories (4-7 matches)  
+                    specific: 0.05       // 5% specific categories (1-3 matches)
+                }
             },
             medium: {
-                minMatches: 3,
-                maxMatches: 12,
-                playerPoolSize: 40
+                playerPoolSize: 35,      // Balanced
+                categoryWeight: {
+                    broad: 0.4,          // 40% broad categories
+                    medium: 0.45,        // 45% medium categories
+                    specific: 0.15       // 15% specific categories
+                }
             },
             hard: {
-                minMatches: 2,
-                maxMatches: 8,
-                playerPoolSize: 45,
-                allowSpecific: true
+                playerPoolSize: 25,      // Strategic, tight pool
+                categoryWeight: {
+                    broad: 0.15,         // 15% broad categories
+                    medium: 0.35,        // 35% medium categories
+                    specific: 0.5        // 50% specific categories (very challenging)
+                }
             }
         };
 
         // Check if game data is loaded
         function checkGameData() {
             if (!window.GAME_DATA || !window.GAME_DATA.playerMatches || !window.GAME_DATA.gameCategories) {
-                console.error('Game data not loaded properly. Make sure data.js is accessible.');
+                console.error('Game data not loaded properly. Make sure game_data.js is accessible.');
                 document.getElementById('currentPlayer').textContent = 'Error: Game data not loaded!';
                 return false;
             }
             return true;
         }
 
-        // Smart category selection with fallback for easy mode
-        function selectSmartCategories(sport, difficulty) {
+        // New category analysis - count matches per category
+        function analyzeCategoryDifficulty(sport) {
             const allCategories = window.GAME_DATA.gameCategories[sport];
             const allPlayers = window.GAME_DATA.playerMatches[sport];
-            const config = difficultyConfig[difficulty];
             
-            // Count how many players match each category
-            const categoryMatches = {};
+            const categoryAnalysis = {};
+            
             allCategories.forEach(category => {
-                categoryMatches[category] = 0;
+                let matchCount = 0;
                 Object.values(allPlayers).forEach(playerCategories => {
                     if (playerCategories.includes(category)) {
-                        categoryMatches[category]++;
+                        matchCount++;
                     }
                 });
-            });
-            
-            // Filter categories based on difficulty
-            let suitableCategories = allCategories.filter(category => {
-                const matches = categoryMatches[category];
-                if (difficulty === 'hard' && config.allowSpecific) {
-                    return matches >= config.minMatches && matches <= config.maxMatches;
+                
+                // Classify categories by difficulty
+                let difficulty;
+                if (matchCount >= 8) {
+                    difficulty = 'broad';      // Easy to match
+                } else if (matchCount >= 4) {
+                    difficulty = 'medium';     // Moderate challenge
+                } else {
+                    difficulty = 'specific';   // Hard to match
                 }
-                return matches >= config.minMatches && matches <= config.maxMatches;
+                
+                categoryAnalysis[category] = {
+                    matches: matchCount,
+                    difficulty: difficulty
+                };
             });
             
-            // If we don't have enough categories (especially for easy mode), supplement with medium difficulty
-            if (suitableCategories.length < 16) {
-                const supplementCategories = allCategories.filter(category => {
-                    const matches = categoryMatches[category];
-                    return matches >= 3 && matches <= 8 && !suitableCategories.includes(category);
-                });
-                suitableCategories = [...suitableCategories, ...supplementCategories];
-            }
-            
-            // Final fallback - use any categories with at least 2 matches
-            if (suitableCategories.length < 16) {
-                const fallbackCategories = allCategories.filter(category => {
-                    return categoryMatches[category] >= 2 && !suitableCategories.includes(category);
-                });
-                suitableCategories = [...suitableCategories, ...fallbackCategories];
-            }
-            
-            return shuffleArray(suitableCategories).slice(0, 16);
+            return categoryAnalysis;
         }
 
-        // Create optimized player pool
+        // New smart category selection based on weighted difficulty
+        function selectSmartCategories(sport, difficulty) {
+            const categoryAnalysis = analyzeCategoryDifficulty(sport);
+            const config = difficultyConfig[difficulty];
+            
+            // Group categories by difficulty
+            const categoryGroups = {
+                broad: [],
+                medium: [],
+                specific: []
+            };
+            
+            Object.entries(categoryAnalysis).forEach(([category, data]) => {
+                // Skip recently used categories to increase variety
+                if (recentlyUsedCategories.includes(category)) return;
+                
+                categoryGroups[data.difficulty].push(category);
+            });
+            
+            // If we don't have enough variety, allow some recent categories back
+            if (categoryGroups.broad.length + categoryGroups.medium.length + categoryGroups.specific.length < 20) {
+                Object.entries(categoryAnalysis).forEach(([category, data]) => {
+                    if (!categoryGroups[data.difficulty].includes(category)) {
+                        categoryGroups[data.difficulty].push(category);
+                    }
+                });
+            }
+            
+            // Select categories based on difficulty weights
+            const selectedCategories = [];
+            const targetCounts = {
+                broad: Math.round(16 * config.categoryWeight.broad),
+                medium: Math.round(16 * config.categoryWeight.medium),
+                specific: Math.round(16 * config.categoryWeight.specific)
+            };
+            
+            // Adjust if rounding doesn't add up to 16
+            const totalSelected = targetCounts.broad + targetCounts.medium + targetCounts.specific;
+            if (totalSelected !== 16) {
+                targetCounts.medium += (16 - totalSelected);
+            }
+            
+            // Select from each group
+            Object.entries(targetCounts).forEach(([difficultyType, count]) => {
+                const availableCategories = shuffleArray(categoryGroups[difficultyType]);
+                selectedCategories.push(...availableCategories.slice(0, count));
+            });
+            
+            // Fill remaining slots if we're short
+            while (selectedCategories.length < 16) {
+                const allRemaining = Object.values(categoryGroups).flat()
+                    .filter(cat => !selectedCategories.includes(cat));
+                if (allRemaining.length === 0) break;
+                selectedCategories.push(shuffleArray(allRemaining)[0]);
+            }
+            
+            // Select reserve categories (different difficulty than main set for wildcard)
+            const remainingCategories = Object.keys(categoryAnalysis)
+                .filter(cat => !selectedCategories.includes(cat));
+            const reserves = shuffleArray(remainingCategories).slice(0, 3);
+            
+            // Track recently used categories
+            recentlyUsedCategories.push(...selectedCategories);
+            if (recentlyUsedCategories.length > 50) {
+                recentlyUsedCategories = recentlyUsedCategories.slice(-30); // Keep last 30
+            }
+            
+            return {
+                main: shuffleArray(selectedCategories).slice(0, 16),
+                reserve: reserves
+            };
+        }
+
+        // Revamped player pool creation - much more inclusive
         function createPlayerPool(sport, selectedCategories, difficulty) {
             const allPlayers = Object.keys(window.GAME_DATA.playerMatches[sport]);
             const config = difficultyConfig[difficulty];
             
-            // Find players that match our selected categories
-            const relevantPlayers = allPlayers.filter(player => {
+            // Create weighted player selection
+            const playerWeights = {};
+            
+            allPlayers.forEach(player => {
                 const playerCategories = window.GAME_DATA.playerMatches[sport][player];
-                // Player must match at least 2 categories from our bingo card
-                const matchCount = selectedCategories.filter(cat => playerCategories.includes(cat)).length;
-                return matchCount >= 2;
+                
+                // Count matches with selected categories
+                const matchCount = selectedCategories.filter(cat => 
+                    playerCategories.includes(cat)
+                ).length;
+                
+                // Weight players based on relevance, but don't exclude anyone completely
+                if (matchCount >= 3) {
+                    playerWeights[player] = 3; // High relevance
+                } else if (matchCount >= 1) {
+                    playerWeights[player] = 2; // Medium relevance
+                } else {
+                    playerWeights[player] = 1; // Low relevance, but still included
+                }
+                
+                // Reduce weight for recently used players
+                if (recentlyUsedPlayers.includes(player)) {
+                    playerWeights[player] = Math.max(1, playerWeights[player] - 1);
+                }
             });
             
-            // If we don't have enough relevant players, add some that match at least 1 category
-            if (relevantPlayers.length < config.playerPoolSize) {
-                const additionalPlayers = allPlayers.filter(player => {
-                    if (relevantPlayers.includes(player)) return false;
-                    const playerCategories = window.GAME_DATA.playerMatches[sport][player];
-                    return selectedCategories.some(cat => playerCategories.includes(cat));
-                });
-                relevantPlayers.push(...additionalPlayers);
+            // Create weighted selection pool
+            const weightedPool = [];
+            Object.entries(playerWeights).forEach(([player, weight]) => {
+                for (let i = 0; i < weight; i++) {
+                    weightedPool.push(player);
+                }
+            });
+            
+            // Select players with weighted randomization
+            const selectedPlayers = [];
+            const shuffledPool = shuffleArray(weightedPool);
+            
+            for (let i = 0; i < config.playerPoolSize && selectedPlayers.length < config.playerPoolSize; i++) {
+                const player = shuffledPool[i % shuffledPool.length];
+                if (!selectedPlayers.includes(player)) {
+                    selectedPlayers.push(player);
+                }
             }
             
-            return shuffleArray(relevantPlayers).slice(0, config.playerPoolSize);
+            // Track recently used players
+            recentlyUsedPlayers.push(...selectedPlayers);
+            if (recentlyUsedPlayers.length > 80) {
+                recentlyUsedPlayers = recentlyUsedPlayers.slice(-50); // Keep last 50
+            }
+            
+            return shuffleArray(selectedPlayers);
         }
 
         // Utility function to shuffle array
@@ -1149,17 +1263,22 @@
         }
 
         function generateSmartBingoCards() {
-            // Select smart categories based on difficulty
-            const selectedCategories = selectSmartCategories(currentSport, currentDifficulty);
-            bingoCards = selectedCategories;
+            // Select smart categories based on NEW difficulty logic
+            const categorySet = selectSmartCategories(currentSport, currentDifficulty);
+            bingoCards = categorySet.main;
+            reserveCategories = categorySet.reserve;
             
-            // Create optimized player pool
-            activePlayerPool = createPlayerPool(currentSport, selectedCategories, currentDifficulty);
+            // Create optimized player pool with NEW logic
+            const allCategories = [...bingoCards, ...reserveCategories];
+            activePlayerPool = createPlayerPool(currentSport, allCategories, currentDifficulty);
+            originalPlayerPool = [...activePlayerPool];
             
             completedCards = [];
             wildcardUsed = false;
             wildcardMode = false;
+            gameEnded = false;
             renderBingoGrid();
+            hideGameMessage();
         }
 
         function renderBingoGrid() {
@@ -1185,9 +1304,11 @@
         }
 
         function nextPlayer() {
-            if (activePlayerPool.length < 5) {
-                // Refresh player pool if running low
-                activePlayerPool = createPlayerPool(currentSport, bingoCards, currentDifficulty);
+            if (gameEnded) return;
+            
+            if (activePlayerPool.length === 0) {
+                endGame(false); // Lost - no more players
+                return;
             }
             
             const randomIndex = Math.floor(Math.random() * activePlayerPool.length);
@@ -1197,7 +1318,7 @@
         }
 
         function selectCard(cardIndex) {
-            if (completedCards.includes(cardIndex) || wildcardMode) return;
+            if (completedCards.includes(cardIndex) || wildcardMode || gameEnded) return;
             
             const selectedCategory = bingoCards[cardIndex];
             const playerCategories = window.GAME_DATA.playerMatches[currentSport][currentPlayer] || [];
@@ -1212,7 +1333,7 @@
                 card.style.color = 'white';
                 
                 if (completedCards.length === 16) {
-                    completeGame();
+                    endGame(true); // Won - completed all squares
                     return;
                 }
                 
@@ -1221,23 +1342,31 @@
                     renderBingoGrid();
                 }, 800);
             } else {
-                // Wrong match
+                // Wrong match - penalty: lose current player AND next player
                 card.style.background = 'var(--error)';
                 card.style.borderColor = 'var(--error)';
+                
+                // Apply penalty: remove one more player from pool (skip next player)
+                if (activePlayerPool.length > 0) {
+                    activePlayerPool.splice(0, 1); // Remove next player silently
+                }
+                
                 setTimeout(() => {
                     card.style.background = 'var(--bg-card)';
                     card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                    nextPlayer();
+                    nextPlayer(); // Move to the player after the penalty
                 }, 800);
             }
         }
 
         function skipPlayer() {
+            if (gameEnded) return;
+            // Skip just loses current player, moves to next
             nextPlayer();
         }
 
         function toggleWildcard() {
-            if (wildcardUsed) return;
+            if (wildcardUsed || gameEnded) return;
             
             wildcardMode = !wildcardMode;
             const wildcardBtn = document.getElementById('wildcardBtn');
@@ -1254,38 +1383,76 @@
         }
 
         function useWildcardOnCard(cardIndex) {
-            if (!wildcardMode || wildcardUsed || completedCards.includes(cardIndex)) return;
+            if (!wildcardMode || wildcardUsed || completedCards.includes(cardIndex) || gameEnded) return;
             
             wildcardUsed = true;
             wildcardMode = false;
             
-            // Get a new category for this position
-            const unusedCategories = window.GAME_DATA.gameCategories[currentSport].filter(cat => 
-                !bingoCards.includes(cat)
-            );
-            
-            if (unusedCategories.length > 0) {
-                // Replace with a more manageable category
-                const config = difficultyConfig[currentDifficulty];
-                const allPlayers = window.GAME_DATA.playerMatches[currentSport];
-                
-                // Find categories that have good player coverage
-                const betterCategories = unusedCategories.filter(category => {
-                    const matches = Object.values(allPlayers).filter(playerCats => 
-                        playerCats.includes(category)
-                    ).length;
-                    return matches >= config.minMatches;
-                });
-                
-                const newCategory = betterCategories.length > 0 ? 
-                    betterCategories[Math.floor(Math.random() * betterCategories.length)] :
-                    unusedCategories[Math.floor(Math.random() * unusedCategories.length)];
-                
+            // Use a reserve category if available
+            if (reserveCategories.length > 0) {
+                const newCategory = reserveCategories.shift();
                 bingoCards[cardIndex] = newCategory;
+            } else {
+                // Fallback: get any unused category
+                const categoryAnalysis = analyzeCategoryDifficulty(currentSport);
+                const unusedCategories = Object.keys(categoryAnalysis).filter(cat => 
+                    !bingoCards.includes(cat)
+                );
+                
+                if (unusedCategories.length > 0) {
+                    // Prefer medium difficulty categories for wildcard
+                    const mediumCategories = unusedCategories.filter(cat => 
+                        categoryAnalysis[cat].difficulty === 'medium'
+                    );
+                    
+                    const newCategory = mediumCategories.length > 0 ? 
+                        mediumCategories[Math.floor(Math.random() * mediumCategories.length)] :
+                        unusedCategories[Math.floor(Math.random() * unusedCategories.length)];
+                    
+                    bingoCards[cardIndex] = newCategory;
+                }
             }
             
             renderBingoGrid();
             updateDisplay();
+        }
+
+        function endGame(won) {
+            gameEnded = true;
+            stopTimer();
+            
+            const gameMessage = document.getElementById('gameMessage');
+            
+            if (won) {
+                gameMessage.className = 'game-message win';
+                gameMessage.innerHTML = `
+                    🎉 Congratulations! Bingo Complete! 🎉
+                    <br><br>
+                    <button class="btn" onclick="resetGame()" style="background: white; color: var(--success); margin-top: 1rem;">
+                        🔄 Play Again
+                    </button>
+                `;
+                saveGameStats(true);
+            } else {
+                gameMessage.className = 'game-message loss';
+                gameMessage.innerHTML = `
+                    😔 Game Over! Ran out of players 😔
+                    <br>
+                    <small>Completed ${completedCards.length}/16 squares</small>
+                    <br><br>
+                    <button class="btn" onclick="resetGame()" style="background: white; color: var(--error); margin-top: 1rem;">
+                        🔄 Try Again
+                    </button>
+                `;
+                saveGameStats(false);
+            }
+            
+            gameMessage.style.display = 'block';
+            updateStats();
+        }
+
+        function hideGameMessage() {
+            document.getElementById('gameMessage').style.display = 'none';
         }
 
         function changeDifficulty(difficulty) {
@@ -1346,24 +1513,17 @@
             if (menu) menu.classList.remove('show');
         }
 
-        function completeGame() {
-            document.getElementById('completionMessage').style.display = 'block';
-            stopTimer();
-            saveGameStats(true);
-            updateStats();
-        }
-
         function resetGame() {
             completedCards = [];
             wildcardUsed = false;
             wildcardMode = false;
-            document.getElementById('completionMessage').style.display = 'none';
+            gameEnded = false;
+            hideGameMessage();
             generateSmartBingoCards();
             nextPlayer();
             if (timerActive) {
                 startTimer();
             }
-            saveGameStats(false);
         }
 
         function switchSport(sport) {
@@ -1392,10 +1552,11 @@
             } else {
                 wildcardBtn.textContent = '🃏 Wildcard';
                 wildcardBtn.classList.remove('active');
+                wildcardBtn.disabled = false;
             }
         }
 
-        // Timer Functions
+        // Timer Functions  
         function startTimer() {
             if (!timerActive) return;
             
@@ -1456,6 +1617,8 @@
             const stats = getStats();
             const today = new Date().toDateString();
             
+            stats.totalGames++;
+            
             if (completed) {
                 stats.completedGames++;
                 stats.currentStreak++;
@@ -1468,19 +1631,16 @@
                         stats.bestTime = gameTime;
                     }
                 }
-                
-                if (!stats.dailyProgress[today]) {
-                    stats.dailyProgress[today] = { completed: 0, total: 0 };
-                }
-                stats.dailyProgress[today].completed++;
             } else {
-                stats.totalGames++;
                 stats.currentStreak = 0;
-                
-                if (!stats.dailyProgress[today]) {
-                    stats.dailyProgress[today] = { completed: 0, total: 0 };
-                }
-                stats.dailyProgress[today].total++;
+            }
+            
+            if (!stats.dailyProgress[today]) {
+                stats.dailyProgress[today] = { completed: 0, total: 0 };
+            }
+            stats.dailyProgress[today].total++;
+            if (completed) {
+                stats.dailyProgress[today].completed++;
             }
             
             localStorage.setItem('bingoStats', JSON.stringify(stats));

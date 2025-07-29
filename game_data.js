@@ -1,657 +1,524 @@
-// Enhanced Game Data Configuration File - Fixed Version
-// All player attributes are now properly synchronized with game categories
+// Enhanced Game Data Configuration File - Objective Facts Only
+// All subjective categories removed - only verifiable facts remain
 
 window.GAME_DATA = {
     playerMatches: {
         cricket: {
             // Indian Players
-            'Virat Kohli': ['Indian Player', 'Right-Handed Batsman', 'Test Captain 2014-2022', 'RCB Player Never Won', 'Scored 13000+ ODI Runs', 'Chase Master', 'Cover Drive Specialist', 'Fitness Icon', 'Most International Centuries While Chasing', 'Fastest to 1000 ODI Runs'],
-            'MS Dhoni': ['Indian Player', 'Wicket-Keeper Captain', 'CSK Captain', '2011 World Cup Winning Captain', '2007 T20 WC Winner', 'Helicopter Shot Creator', 'No ODI Century Outside Asia', 'Finisher Specialist', 'Most Stumpings in Career', 'Lieutenant Colonel in Army'],
-            'Rohit Sharma': ['Indian Player', 'Right-Handed Batsman', 'MI Captain 5 IPL Titles', 'Only Player with 3 ODI Double Centuries', 'Highest Individual ODI Score (264)', 'Pull Shot Master', 'Current Test Captain', 'Most International Sixes', 'Hitman Nickname'],
-            'Sachin Tendulkar': ['Indian Player', 'Right-Handed Batsman', 'Retired Legend', 'First to 100 International Centuries', 'Most Runs in International Cricket', 'Little Master', 'First ODI Double Century Scorer', 'Played 6 World Cups', 'First Player Dismissed by Third Umpire', '200 Test Matches Played'],
-            'Jasprit Bumrah': ['Indian Player', 'Fast Bowler', 'MI Player', 'Yorker Specialist', 'Unique Bowling Action', 'Best Bowling Figures in ODI', 'Death Bowling Specialist', 'Fastest to 100 ODI Wickets'],
-            'R Ashwin': ['Indian Player', 'Off-Spinner', 'Engineer Turned Cricketer', 'Carrom Ball Expert', 'Most Wickets in WTC', 'Mankading Incident', 'Multiple Test Centuries', 'YouTube Cricket Analyst', 'Most 5-Wicket Hauls in Tests'],
-            'Ravindra Jadeja': ['Indian Player', 'Left-Arm Spinner', 'CSK Player', 'All-Rounder', 'Sword Celebration', 'Direct Hit Specialist', 'Triple Century Scorer', 'Sir Jadeja Nickname', 'Fastest to 200 Test Wickets'],
-            'KL Rahul': ['Indian Player', 'Wicket-Keeper Batsman', 'Former Captain', 'Fastest Century in All Formats', 'Orange Cap Winner', 'Versatile Batting Order', 'Stylish Player'],
-            'Hardik Pandya': ['Indian Player', 'Fast-Bowling All-Rounder', 'GT Captain First Season Win', 'Comeback from Surgery', 'Finisher Specialist', 'Street-Smart Cricketer', 'Multiple Controversies'],
-            'Rishabh Pant': ['Indian Player', 'Wicket-Keeper Batsman', 'Left-Handed Batsman', 'DC Captain', 'Car Accident Survivor', 'Reverse Sweep Master', 'Youngest Test Centurion in England'],
-            'Shubman Gill': ['Indian Player', 'Right-Handed Batsman', 'GT Player', 'Under-19 World Cup Winner', 'Youngest ODI Double Centurion', 'Classical Technique', 'Future Star'],
-            'Mohammed Shami': ['Indian Player', 'Fast Bowler', 'GT Player', 'Most Wickets in Single World Cup', 'Reverse Swing Master', 'Personal Life Controversies', 'Comeback from Injury'],
-            'Yuzvendra Chahal': ['Indian Player', 'Leg-Spinner', 'RR Player', 'Chess Player', 'Most T20I Wickets', 'Googly Specialist', 'TikTok Videos'],
-            'Suryakumar Yadav': ['Indian Player', 'Right-Handed Batsman', 'MI Player', 'Mr. 360 Degrees', 'T20 Specialist', 'Late International Debut', 'Unorthodox Shots'],
+            'Virat Kohli': ['Indian Player', 'Right-Handed Batsman', 'Former Test Captain', 'Former ODI Captain', 'Current RCB Player', 'RCB Player Never Won IPL', 'Scored 13000+ ODI Runs', 'Cover Drive Specialist', 'Most International Centuries While Chasing', 'Married to Actress', 'Has Children'],
+            'MS Dhoni': ['Indian Player', 'Wicket-Keeper Batsman', 'Former CSK Captain', 'Former Test Captain', 'Former ODI Captain', 'Former T20I Captain', '2011 World Cup Winning Captain', '2007 T20 WC Winner', 'Helicopter Shot Creator', 'Most Stumpings in Career', 'Lieutenant Colonel in Army', 'Married', 'Has Children'],
+            'Rohit Sharma': ['Indian Player', 'Right-Handed Batsman', 'Current MI Player', 'Current Test Captain', 'Current ODI Captain', 'Current T20I Captain', 'Only Player with 3 ODI Double Centuries', 'Highest Individual ODI Score (264)', 'Pull Shot Specialist', 'Hitman Nickname', 'Married', 'Has Children'],
+            'Sachin Tendulkar': ['Indian Player', 'Right-Handed Batsman', 'Former MI Player', 'Retired Legend', 'First to 100 International Centuries', 'Most Runs in International Cricket', 'First ODI Double Century Scorer', 'Played 6 World Cups', '200 Test Matches Played', 'Married', 'Has Children'],
+            'Jasprit Bumrah': ['Indian Player', 'Fast Bowler', 'Current MI Player', 'Yorker Specialist', 'Fastest Indian to 100 ODI Wickets', 'Current Test Vice-Captain', 'Married to Presenter'],
+            'R Ashwin': ['Indian Player', 'Off-Spinner', 'All-Rounder', 'Current RR Player', 'Engineer Turned Cricketer', 'Carrom Ball Specialist', 'Most Wickets in WTC', 'Mankading Incident', 'YouTube Cricket Analyst', 'Most 5-Wicket Hauls for India', 'Married', 'Has Children'],
+            'Ravindra Jadeja': ['Indian Player', 'Left-Arm Spinner', 'All-Rounder', 'Current CSK Player', 'Sword Celebration', 'Triple Century Scorer', 'Sir Jadeja Nickname', 'Married', 'Has Children'],
+            'KL Rahul': ['Indian Player', 'Right-Handed Batsman', 'Wicket-Keeper Batsman', 'Current LSG Captain', 'Former PBKS Captain', 'Fastest Indian T20I Century', 'Orange Cap Winner'],
+            'Hardik Pandya': ['Indian Player', 'All-Rounder', 'Fast-Bowling All-Rounder', 'Current MI Captain', 'Former GT Captain', 'GT Captain First Season Win', 'Comeback from Surgery', 'Married', 'Has Children'],
+            'Rishabh Pant': ['Indian Player', 'Wicket-Keeper Batsman', 'Left-Handed Batsman', 'Current DC Captain', 'Car Accident Survivor', 'Reverse Sweep Specialist', 'Comeback from Injury'],
+            'Shubman Gill': ['Indian Player', 'Right-Handed Batsman', 'Current GT Captain', 'Under-19 World Cup Winner', 'Youngest Indian ODI Double Centurion'],
+            'Mohammed Shami': ['Indian Player', 'Fast Bowler', 'Current GT Player', 'Most Wickets in 2023 World Cup', 'Comeback from Injury'],
+            'Yuzvendra Chahal': ['Indian Player', 'Leg-Spinner', 'Current RR Player', 'Former RCB Player', 'Chess Player', 'Most T20I Wickets for India', 'YouTube Channel', 'Married'],
+            'Suryakumar Yadav': ['Indian Player', 'Right-Handed Batsman', 'Current MI Player', 'Current T20I Captain', 'Mr. 360 Degrees', 'Late International Debut', 'Married'],
             
             // Australian Players
-            'Steve Smith': ['Australian Player', 'Right-Handed Batsman', 'Fidgety Batting Stance', 'Sandpaper Scandal', 'Test Average Above 60', 'Former Captain', 'Leg-Spinner Turned Batsman', 'Ashes Hero'],
-            'Pat Cummins': ['Australian Player', 'Fast Bowler', 'Current Test Captain', 'Fastest to 100 Test Wickets', 'Most Expensive IPL Buy', 'KKR Player', 'Injury Comeback'],
-            'David Warner': ['Australian Player', 'Left-Handed Opener', 'Triple Century Scorer', 'SRH Player', 'Sandpaper Scandal', 'TikTok Videos', 'Switch Hit Master', 'First Century in 100th T20I'],
-            'Mitchell Starc': ['Australian Player', 'Left-Arm Fast', 'Pink Ball Specialist', 'Fastest Ball in Test', 'Most Wickets in Single World Cup', 'Married to Cricketer', 'Yorker Specialist', 'Most Expensive IPL Buy 2024'],
-            'Glenn Maxwell': ['Australian Player', 'All-Rounder', 'RCB Player', 'Big Show Nickname', 'Double Century While Injured', 'Reverse Sweep Master', 'Mental Health Advocate', 'Fastest World Cup Century'],
-            'Adam Zampa': ['Australian Player', 'Leg-Spinner', 'RR Player', 'T20 Specialist', 'Googly Expert', 'Vegan Lifestyle'],
-            'Marcus Stoinis': ['Australian Player', 'All-Rounder', 'LSG Player', 'Power Hitter', 'Late Bloomer', 'Gym Enthusiast'],
-            'Josh Hazlewood': ['Australian Player', 'Fast Bowler', 'Test Match Specialist', 'McGrath Comparisons', 'Injury Prone', 'Line and Length Expert'],
-            'Travis Head': ['Australian Player', 'Left-Handed Batsman', 'SRH Player', 'Test Match Winner', 'Aggressive Opener', 'WTC Final Hero'],
+            'Steve Smith': ['Australian Player', 'Right-Handed Batsman', 'Former Test Captain', 'Former ODI Captain', 'Sandpaper Scandal', 'Batting Average Above 60', 'Married'],
+            'Pat Cummins': ['Australian Player', 'Fast Bowler', 'Current Test Captain', 'Current ODI Captain', 'Current SRH Captain', 'Most Expensive IPL Buy 2024', 'WTC Final Winner', 'Married', 'Has Children'],
+            'David Warner': ['Australian Player', 'Left-Handed Batsman', 'Left-Handed Opener', 'Former DC Captain', 'Former SRH Captain', 'Triple Century Scorer', 'Sandpaper Scandal', 'Retired from Tests', 'Married', 'Has Children', 'TikTok Videos'],
+            'Mitchell Starc': ['Australian Player', 'Left-Arm Fast Bowler', 'Most Expensive IPL Buy 2024', 'Current KKR Player', 'Married to Cricketer', 'Yorker Specialist'],
+            'Glenn Maxwell': ['Australian Player', 'All-Rounder', 'Current RCB Player', 'Former PBKS Captain', 'Big Show Nickname', 'Reverse Sweep Specialist', '201* While Chasing', 'Mental Health Advocate', 'Married'],
+            'Adam Zampa': ['Australian Player', 'Leg-Spinner', 'Current RR Player', 'Googly Specialist', 'Married'],
+            'Marcus Stoinis': ['Australian Player', 'All-Rounder', 'Current LSG Player', 'Greek Heritage'],
+            'Josh Hazlewood': ['Australian Player', 'Fast Bowler', 'Current RCB Player'],
+            'Travis Head': ['Australian Player', 'Left-Handed Batsman', 'Left-Handed Opener', 'Current SRH Player', 'WTC Final Hero', '2023 World Cup Final Hero', 'Married', 'Has Children'],
             
             // English Players
-            'Joe Root': ['English Player', 'Right-Handed Batsman', 'Former Test Captain', 'Reverse Scoop Creator', 'Most Test Runs for England', 'Classical Test Batsman', 'Conversion Rate Issues'],
-            'Ben Stokes': ['English Player', 'All-Rounder', 'Current Test Captain', 'Headingley Hero', '2019 World Cup Hero', 'New Zealand Born', 'Aggressive Captain', 'Bristol Incident'],
-            'Jos Buttler': ['English Player', 'Wicket-Keeper Batsman', 'RR Captain', 'Fastest ODI Century', 'White-Ball Specialist', 'Mankading Victim', 'T20 Specialist'],
-            'Jonny Bairstow': ['English Player', 'Wicket-Keeper Batsman', 'PBKS Player', 'Bazball Advocate', 'Multiple Positions', 'Comeback from Injury'],
-            'Mark Wood': ['English Player', 'Fast Bowler', 'LSG Player', 'Express Pace', 'Injury Prone', 'Happy Personality'],
-            'Moeen Ali': ['English Player', 'All-Rounder', 'CSK Player', 'Off-Spinner', 'Beard Icon', 'Versatile Player'],
-            'Sam Curran': ['English Player', 'All-Rounder', 'PBKS Player', 'Most Expensive IPL Buy', 'Young Star', 'Death Bowling Specialist'],
+            'Joe Root': ['English Player', 'Right-Handed Batsman', 'Former Test Captain', 'Reverse Sweep Specialist', 'Most Test Runs for England', 'Married', 'Has Children'],
+            'Ben Stokes': ['English Player', 'All-Rounder', 'Current Test Captain', '2019 World Cup Hero', 'Headingley Hero', 'New Zealand Born', 'Married', 'Has Children', 'Bristol Incident'],
+            'Jos Buttler': ['English Player', 'Wicket-Keeper Batsman', 'Current RR Captain', 'Current ODI Captain', 'Current T20I Captain', 'Mankading Incident', 'Married', 'Has Children'],
+            'Jonny Bairstow': ['English Player', 'Wicket-Keeper Batsman', 'Current PBKS Player', 'Comeback from Injury', '100 Test Matches', 'Married'],
+            'Mark Wood': ['English Player', 'Fast Bowler', 'Current LSG Player', 'Express Pace', 'Married', 'Has Children'],
+            'Moeen Ali': ['English Player', 'All-Rounder', 'Off-Spinner', 'Former CSK Player', 'Retired from Tests', 'Married', 'Has Children'],
+            'Sam Curran': ['English Player', 'All-Rounder', 'Current PBKS Player', 'Most Expensive IPL Buy 2023', '2022 T20 World Cup Player of Tournament', 'Curran Brothers'],
             
             // Pakistani Players
-            'Babar Azam': ['Pakistani Player', 'Right-Handed Batsman', 'Cover Drive Master', 'Fastest to 5000 T20I Runs', 'Former Captain', 'Compared to Kohli', 'Elegant Style', 'Most T20I Runs Calendar Year'],
-            'Shaheen Afridi': ['Pakistani Player', 'Left-Arm Fast', 'Tall Fast Bowler', 'Youngest 5-Wicket Haul', 'Son-in-Law of Afridi', 'Injury Issues', 'New Ball Specialist'],
-            'Mohammad Rizwan': ['Pakistani Player', 'Wicket-Keeper Batsman', 'Most T20I Runs Calendar Year', 'Opening Batsman', 'Played from ICU', 'Religious Celebrations'],
-            'Shadab Khan': ['Pakistani Player', 'All-Rounder', 'Leg-Spinner', 'Vice-Captain', 'Fielding Expert', 'Young Leader'],
-            'Haris Rauf': ['Pakistani Player', 'Fast Bowler', 'BBL Discovery', 'Express Pace', 'Death Bowling', 'Tape Ball Background'],
-            'Fakhar Zaman': ['Pakistani Player', 'Left-Handed Opener', 'Champions Trophy Hero', 'Aggressive Batsman', 'Navy Background'],
-            'Naseem Shah': ['Pakistani Player', 'Fast Bowler', 'Teenage Sensation', 'Hat-trick Youngest', 'Mother Passed Away'],
-            'Shahid Afridi': ['Pakistani Legend', 'All-Rounder', 'Boom Boom', 'Fastest ODI Century Record', 'Most Sixes in ODI', 'Age Controversy', 'Star Personality'],
-            'Wasim Akram': ['Pakistani Legend', 'Left-Arm Fast', 'Sultan of Swing', 'Reverse Swing Pioneer', 'KKR Bowling Coach', 'Diabetes Survivor', 'Commentary Career'],
-            'Shoaib Akhtar': ['Pakistani Legend', 'Fast Bowler', 'Rawalpindi Express', 'Fastest Ball Ever (161.3 kmph)', 'Injury Issues', 'Controversial Career', 'YouTube Channel'],
+            'Babar Azam': ['Pakistani Player', 'Right-Handed Batsman', 'Former Test Captain', 'Former ODI Captain', 'Former T20I Captain', 'Cover Drive Specialist'],
+            'Shaheen Afridi': ['Pakistani Player', 'Left-Arm Fast Bowler', 'Current T20I Captain', 'Son-in-Law of Afridi', 'Married'],
+            'Mohammad Rizwan': ['Pakistani Player', 'Wicket-Keeper Batsman', 'Current ODI Captain', 'Current Test Captain', 'Played from ICU'],
+            'Shadab Khan': ['Pakistani Player', 'All-Rounder', 'Leg-Spinner', 'Googly Specialist'],
+            'Haris Rauf': ['Pakistani Player', 'Fast Bowler', 'BBL Discovery', 'Tape Ball Background'],
+            'Fakhar Zaman': ['Pakistani Player', 'Left-Handed Batsman', 'Left-Handed Opener', 'Champions Trophy Hero', 'Navy Background'],
+            'Naseem Shah': ['Pakistani Player', 'Fast Bowler', 'Youngest to Take Hat-trick', 'Mother Passed Away'],
+            'Shahid Afridi': ['Pakistani Legend', 'All-Rounder', 'Former Test Captain', 'Former ODI Captain', 'Former T20I Captain', 'Boom Boom', 'Fastest ODI Century Record', 'Most International Sixes', 'Age Controversy', 'Has Children'],
+            'Wasim Akram': ['Pakistani Legend', 'Left-Arm Fast Bowler', 'Sultan of Swing', 'KKR Bowling Coach', 'Diabetes Survivor', 'Commentary Career', 'Married Twice', 'Has Children'],
+            'Shoaib Akhtar': ['Pakistani Legend', 'Fast Bowler', 'Fastest Ball Ever (161.3 kmph)', 'Rawalpindi Express', 'YouTube Cricket Analyst'],
             
             // Other Notable Players
-            'Kane Williamson': ['New Zealand Player', 'Right-Handed Batsman', 'SRH Player', 'Mr. Nice Guy', 'Elbow Issues', '2019 WC Player of Tournament', 'Classical Technique', 'Calm Captain'],
-            'AB de Villiers': ['South African Legend', 'Mr. 360 Degrees', 'RCB Icon', 'Retired Early', 'Fastest ODI Century', 'Wicket-Keeper Batsman', 'Innovation Master', 'Superman Fielder'],
-            'Chris Gayle': ['West Indies Legend', 'Universe Boss', 'Most T20 Sixes', 'Six Off First Ball Test', 'Party Lifestyle', 'Multiple T20 Centuries', 'PBKS Legend', 'Left-Handed Opener'],
-            'Rashid Khan': ['Afghan Player', 'Leg-Spinner', 'GT Player', 'Youngest Captain', 'Googly Specialist', 'Age Controversy', 'Quick Action', 'Lower-Order Hitting'],
-            'Shakib Al Hasan': ['Bangladeshi Player', 'All-Rounder', 'Left-Arm Spinner', 'Political Figure', 'Most Successful Bangladeshi', 'Multiple Suspensions', 'KKR Player'],
-            'Trent Boult': ['New Zealand Player', 'Left-Arm Fast', 'RR Player', 'Swing Bowling Master', 'New Ball Specialist', 'Opted Out of Contract'],
-            'Tim Southee': ['New Zealand Player', 'Fast Bowler', 'KKR Player', 'Test Specialist', 'Leadership Role', 'Swing Expert'],
-            'Quinton de Kock': ['South African Player', 'Wicket-Keeper Batsman', 'LSG Player', 'Left-Handed Opener', 'Knee Controversy', 'Early Retirement'],
-            'Kagiso Rabada': ['South African Player', 'Fast Bowler', 'PBKS Player', 'Fastest to 200 Wickets', 'Express Pace', 'Celebration Issues'],
+            'Kane Williamson': ['New Zealand Player', 'Right-Handed Batsman', 'Former Test Captain', 'Former ODI Captain', 'Former T20I Captain', 'Former SRH Captain', '2019 World Cup Player of Tournament', 'Married', 'Has Children'],
+            'AB de Villiers': ['South African Legend', 'Wicket-Keeper Batsman', 'Mr. 360 Degrees', 'Former RCB Player', 'Former Test Captain', 'Former ODI Captain', 'Retired Early', 'Fastest ODI 50, 100, 150', 'Married', 'Has Children'],
+            'Chris Gayle': ['West Indies Legend', 'Left-Handed Batsman', 'Left-Handed Opener', 'Universe Boss', 'Most T20 Sixes', 'Most T20 Centuries', 'Former PBKS Player', 'Former RCB Player', 'Has Children'],
+            'Rashid Khan': ['Afghan Player', 'Leg-Spinner', 'Current GT Player', 'Former SRH Player', 'Youngest Captain', 'Googly Specialist', 'Age Controversy'],
+            'Shakib Al Hasan': ['Bangladeshi Player', 'All-Rounder', 'Left-Arm Spinner', 'Current KKR Player', 'Former Test Captain', 'Former ODI Captain', 'Former T20I Captain', 'Political Figure', 'Multiple Suspensions', 'Married', 'Has Children'],
+            'Trent Boult': ['New Zealand Player', 'Left-Arm Fast Bowler', 'Current RR Player', 'Former MI Player', 'Married', 'Has Children'],
+            'Tim Southee': ['New Zealand Player', 'Fast Bowler', 'Current Test Captain', 'Former KKR Player', 'Married', 'Has Children'],
+            'Quinton de Kock': ['South African Player', 'Wicket-Keeper Batsman', 'Left-Handed Batsman', 'Left-Handed Opener', 'Current LSG Player', 'Former MI Player', 'Former Test Captain', 'Former ODI Captain', 'Retired from Tests', 'Married', 'Has Children'],
+            'Kagiso Rabada': ['South African Player', 'Fast Bowler', 'Current PBKS Player', 'Former DC Player', 'Fastest to 200 Test Wickets'],
             
             // Legends
-            'Don Bradman': ['Australian Legend', 'Batting Average 99.94', 'The Don', 'Most Double Centuries', '5000 Runs vs Single Team', 'Bodyline Target', 'Greatest Batsman', 'Invincibles Captain'],
-            'Viv Richards': ['West Indies Legend', 'Master Blaster', 'Never Wore Helmet', 'Destructive Batsman', 'Stadium Named After', 'First Century in WC Final', 'Swagger King'],
-            'Shane Warne': ['Australian Legend', 'Leg-Spin Wizard', 'Ball of the Century', '700+ Test Wickets', 'Playboy Lifestyle', 'RR Captain IPL Winner', 'Commentary Career', 'Passed Away 2022'],
-            'Brian Lara': ['West Indies Legend', 'Highest Test Score 400*', 'Prince of Trinidad', 'Most Runs Single Over Test', 'Left-Handed Elegance', 'Record Breaker', 'First Class 501*'],
-            'Jacques Kallis': ['South African Legend', 'Greatest All-Rounder', 'KKR Player', '10000 Runs and 250 Wickets', 'Slip Catching Expert', 'Batting Coach'],
-            'Muttiah Muralitharan': ['Sri Lankan Legend', 'Most Test Wickets', 'Doosra Inventor', 'Bowling Action Controversy', 'CSK Player', 'Tamil Background'],
-            'Kumar Sangakkara': ['Sri Lankan Legend', 'Wicket-Keeper Batsman', 'Left-Handed Elegance', 'Four Consecutive ODI Centuries', 'MCC President', 'Commentary Career'],
+            'Don Bradman': ['Australian Legend', 'Right-Handed Batsman', 'Batting Average 99.94', 'The Don', 'Most Double Centuries', 'Bodyline Target', 'Invincibles Captain'],
+            'Viv Richards': ['West Indies Legend', 'Right-Handed Batsman', 'Master Blaster', 'Never Wore Helmet', 'Stadium Named After', 'Former Test Captain', 'Former ODI Captain'],
+            'Shane Warne': ['Australian Legend', 'Leg-Spinner', 'Ball of the Century', '700+ Test Wickets', 'Former RR Captain', 'RR Captain IPL Winner', 'Commentary Career', 'Died in 2022'],
+            'Brian Lara': ['West Indies Legend', 'Left-Handed Batsman', 'Highest Test Score 400*', 'Prince of Trinidad', 'First Class 501*', 'Former Test Captain', 'Former ODI Captain'],
+            'Jacques Kallis': ['South African Legend', 'All-Rounder', 'Right-Handed Batsman', 'Former KKR Player', 'Former Test Captain', 'Former ODI Captain', '10000 Runs and 250 Wickets', 'Married'],
+            'Muttiah Muralitharan': ['Sri Lankan Legend', 'Off-Spinner', 'Most Test Wickets', 'Doosra Pioneer', 'Bowling Action Controversy', 'Former CSK Player', 'Former SRH Bowling Coach', 'Tamil Background', 'Married'],
+            'Kumar Sangakkara': ['Sri Lankan Legend', 'Wicket-Keeper Batsman', 'Left-Handed Batsman', 'Former Test Captain', 'Former ODI Captain', 'Four Consecutive ODI Centuries', 'MCC President', 'Commentary Career', 'Married', 'Has Children'],
             
             // Women Cricketers
-            'Smriti Mandhana': ['Indian Women Player', 'Left-Handed Opener', 'RCB WPL', 'Stylish Batter', 'Youth Icon', 'Vice-Captain', 'Fastest T20I Fifty'],
-            'Harmanpreet Kaur': ['Indian Women Player', 'Captain', 'MI WPL', 'Power Hitter', '171* vs Australia', 'Aggressive Leader', 'First T20I Century'],
-            'Mithali Raj': ['Indian Women Legend', 'Most ODI Runs Women', 'Test Specialist', 'Classical Batter', 'Biopic Made', 'Longest Career', 'Retired 2022'],
-            'Jhulan Goswami': ['Indian Women Legend', 'Fast Bowler', 'Most ODI Wickets Women', 'Tall Fast Bowler', 'Chakdaha Express', 'Retired 2022'],
-            'Ellyse Perry': ['Australian Women Player', 'All-Rounder Supreme', 'Dual International', 'Fast Bowler', 'Model Career', 'RCB WPL', 'Record Holder'],
-            'Meg Lanning': ['Australian Women Player', 'Most Successful Captain', 'Mental Health Break', 'Record Scorer', 'DC WPL Captain', 'Retired Young'],
-            'Alyssa Healy': ['Australian Women Player', 'Wicket-Keeper Batsman', 'UP WPL', 'Aggressive Opener', 'Married to Starc', 'Record Keeper']
+            'Smriti Mandhana': ['Indian Women Player', 'Left-Handed Batsman', 'Left-Handed Opener', 'Current RCB WPL Vice-Captain', 'Former Indian Vice-Captain'],
+            'Harmanpreet Kaur': ['Indian Women Player', 'Right-Handed Batsman', 'All-Rounder', 'Current ODI Captain', 'Current T20I Captain', 'Current MI WPL Captain', '171* vs Australia', 'First Indian T20I Century'],
+            'Mithali Raj': ['Indian Women Legend', 'Right-Handed Batsman', 'Former Test Captain', 'Former ODI Captain', 'Most ODI Runs Women', 'Biopic Made', 'Retired in 2022'],
+            'Jhulan Goswami': ['Indian Women Legend', 'Fast Bowler', 'Most ODI Wickets Women', 'Chakdaha Express', 'Retired in 2022'],
+            'Ellyse Perry': ['Australian Women Player', 'All-Rounder', 'Fast Bowler', 'Right-Handed Batsman', 'Current RCB WPL Player', 'Played Football and Cricket', 'Dual International', 'Married'],
+            'Meg Lanning': ['Australian Women Player', 'Right-Handed Batsman', 'Former Australian Captain', 'Former Test Captain', 'Former ODI Captain', 'Former T20I Captain', 'Current DC WPL Captain', 'Mental Health Break'],
+            'Alyssa Healy': ['Australian Women Player', 'Wicket-Keeper Batsman', 'Right-Handed Batsman', 'Current Australian Captain', 'Current Test Captain', 'Current ODI Captain', 'Current T20I Captain', 'Current UP WPL Captain', 'Married to Starc']
         },
 
         tennis: {
-            // Current Male Champions
-            'Novak Djokovic': ['Serbian Player', '24 Grand Slams Record', 'Gluten-Free Advocate', 'Most Weeks at No. 1', 'All-Surface Master', 'Return Expert', 'Meditation Practice', 'Career Golden Masters', 'Double Career Slam', 'Chest Thump Celebration', 'Never Retired Mid-Match'],
-            'Carlos Alcaraz': ['Spanish Player', 'Youngest Ever No. 1', 'Drop Shot Artist', 'Coached by Ferrero', 'Real Madrid Fan', 'Speed and Power', 'Wimbledon Champion', 'US Open Champion', 'Next Gen Leader', 'Fastest Serve Over 130 mph'],
-            'Rafael Nadal': ['Spanish Player', '14 French Open Titles', 'Left-Handed Natural Righty', 'King of Clay', 'OCD Court Rituals', 'Clay Court Win Streak 50+', 'Capri Pants Icon', 'Uncle Toni Coached', 'Never Smashed Racquet', 'Vamos Celebration', 'Injury Comebacks'],
-            'Daniil Medvedev': ['Russian Player', 'Octopus Nickname', 'Unusual Technique', 'Video Game Celebration', 'Clay Court Struggles', 'US Open Champion', 'Tactical Genius', 'Flat Baseline Game', 'Crowd Antagonist', 'Chess Player'],
-            'Stefanos Tsitsipas': ['Greek Player', 'One-Handed Backhand', 'Philosophy Tweets', 'Bathroom Breaks', 'YouTube Vlogger', 'Coached by Parent', 'Monte Carlo Master', 'Never Won Slam'],
-            'Alexander Zverev': ['German Player', 'Double Fault Issues', 'Domestic Abuse Case', 'Olympic Gold Medalist', 'Ankle Injury 2022', 'Tall Baseline Player', 'Dating Drama', 'ATP Finals Winner'],
-            'Andrey Rublev': ['Russian Player', 'BWEH Scream', 'Self-Harm on Court', 'Emotional Player', 'Powerful Forehand', 'Masters Struggles', 'Chess Enthusiast'],
-            'Casper Ruud': ['Norwegian Player', 'Clay Court Specialist', 'Multiple Slam Finals', 'Golf Enthusiast', 'Academy Product', 'Never Beat Top 5 in Slam'],
+            // Current Male Players
+            'Novak Djokovic': ['Serbian Player', 'Right-Handed', '24 Grand Slams Record', 'Most Grand Slams Men', 'Gluten-Free Diet', 'Most Weeks at No. 1', 'Former No. 1', 'Career Golden Masters', 'Double Career Slam', 'Never Retired Mid-Match', 'Married', 'Has Children'],
+            'Carlos Alcaraz': ['Spanish Player', 'Right-Handed', 'Youngest Ever No. 1', 'Current No. 1', 'Coached by Ferrero', 'Real Madrid Fan', 'Wimbledon Champion', 'US Open Champion', 'Multiple Grand Slams'],
+            'Rafael Nadal': ['Spanish Player', 'Left-Handed', 'Left-Handed Natural Righty', '22 Grand Slams', '14 French Open Titles', 'King of Clay', 'Uncle Toni Coached', 'Never Smashed Racquet', 'Former No. 1', 'Olympic Gold Medalist', 'Married', 'Has Children'],
+            'Daniil Medvedev': ['Russian Player', 'Right-Handed', 'Octopus Nickname', 'US Open Champion', 'Grand Slam Winner', 'Chess Player', 'Former No. 1', 'Married'],
+            'Stefanos Tsitsipas': ['Greek Player', 'Right-Handed', 'One-Handed Backhand', 'YouTube Vlogger', 'Coached by Parent', 'Monte Carlo Master', 'Never Won Slam', 'Multiple Slam Finals'],
+            'Alexander Zverev': ['German Player', 'Right-Handed', 'Olympic Gold Medalist', 'ATP Finals Winner', 'Multiple Masters Titles', 'Domestic Violence Case', 'Ankle Injury 2022', 'Never Won Slam', 'Former No. 2'],
+            'Andrey Rublev': ['Russian Player', 'Right-Handed', 'Bweh Celebration', 'Masters 1000 Struggles', 'Multiple Masters Finals'],
+            'Casper Ruud': ['Norwegian Player', 'Right-Handed', 'Clay Court Specialist', 'Multiple Slam Finals', 'Never Won Slam', 'Golf Enthusiast', 'Coached by Parent', 'Former No. 2'],
+            'Jannik Sinner': ['Italian Player', 'Right-Handed', 'Coached by Cahill', 'Australian Open Champion', 'Grand Slam Winner', 'Current No. 2', 'Former No. 1', 'Doping Case'],
+            'Holger Rune': ['Danish Player', 'Right-Handed', 'Mother on Tour', 'Multiple Coaches', 'Paris Master Winner', 'Masters Champion', 'Coached by Parent'],
+            'Taylor Fritz': ['American Player', 'Right-Handed', 'Top 10 Player', 'Indian Wells Winner', 'Masters Champion', 'Son of Tennis Players', 'Has Children'],
+            'Felix Auger-Aliassime': ['Canadian Player', 'Right-Handed', 'Uncle Toni Coached', 'Davis Cup Hero', 'Multiple ATP Titles', 'Never Won Masters'],
             
-            // Recent Male Legends
-            'Roger Federer': ['Swiss Legend', 'Most Graceful Player', '8 Wimbledon Titles', 'One-Handed Backhand', 'Never Retired Mid-Match', 'Longest No. 1 Streak', 'SABR Inventor', 'Cried at AO 2009', 'Twin Sets of Twins', 'Multilingual Speaker', 'Met Gala Regular'],
-            'Andy Murray': ['British Player', 'Hip Replacement Player', 'Ended 77-Year Drought', 'Olympic Gold Medalist', 'Feminist Quotes', 'First Female Coach', 'Tactical Master', 'Dry Humor', 'Scottish Identity', 'Comeback Attempts'],
-            'Stan Wawrinka': ['Swiss Player', 'One-Handed Backhand', 'Tattoo Quote', 'Late Bloomer', 'Stanimal Mode', 'Beat Djokovic in Finals', 'Shorts Fashion'],
-            'Juan Martin del Potro': ['Argentine Player', 'Tower of Tandil', 'Wrist Injuries', 'Gentle Giant', 'Beat Fed at USO', 'Injury Retirement'],
-            'Marin Cilic': ['Croatian Player', 'US Open Champion', 'Tall Server', 'Consistent Player', 'Coach Goran', 'Doping Suspension'],
-            'Dominic Thiem': ['Austrian Player', 'US Open Champion', 'One-Handed Backhand', 'Wrist Injury', 'Environmental Activist', 'Early Retirement'],
+            // Recent Legends & Veterans
+            'Roger Federer': ['Swiss Legend', 'Right-Handed', '20 Grand Slams', '8 Wimbledon Titles', 'One-Handed Backhand', 'Never Retired Mid-Match', 'Longest No. 1 Streak', 'Former No. 1', 'Twin Sets of Twins', 'Met Gala Regular', 'Retired in 2022', 'Married', 'Has Children'],
+            'Andy Murray': ['British Player', 'Right-Handed', '3 Grand Slams', 'Hip Replacement Player', 'Ended 77-Year Drought', 'Olympic Gold Medalist', 'Former No. 1', 'Married', 'Has Children'],
+            'Stan Wawrinka': ['Swiss Player', 'Right-Handed', '3 Grand Slams', 'One-Handed Backhand', 'Tattoo Quote', 'Former No. 3'],
+            'Juan Martin del Potro': ['Argentine Player', 'Right-Handed', 'US Open Champion', 'Grand Slam Winner', 'Former No. 3'],
+            'Marin Cilic': ['Croatian Player', 'Right-Handed', 'US Open Champion', 'Grand Slam Winner', 'Former No. 3', 'Married'],
+            'Dominic Thiem': ['Austrian Player', 'Right-Handed', 'US Open Champion', 'Grand Slam Winner', 'One-Handed Backhand', 'Wrist Injury', 'Former No. 3'],
+            'Nick Kyrgios': ['Australian Player', 'Right-Handed', 'Underarm Server', 'Basketball Fan', 'Mental Health Advocate', 'Wimbledon Finalist', 'Never Won Slam', 'Assault Charges'],
+            'Gael Monfils': ['French Player', 'Right-Handed', 'La Monf Showman', 'Married Svitolina', 'Never Won Masters'],
             
-            // Women Current Stars
-            'Iga Swiatek': ['Polish Player', 'Bagel Specialist', 'Psychology Interest', 'On-Court Therapist', 'Pre-Match Music', '4 French Opens', 'Baseline Grinder', 'Fastest to 10 Titles', 'Led Zeppelin Fan', 'WTA No. 1'],
-            'Aryna Sabalenka': ['Belarusian Player', 'Loudest Grunt Tour', 'Tiger Tattoo', 'Aggressive Baseline', 'Double Fault Struggles', 'Australian Open Champion', 'Power Game', 'Emotional Player'],
-            'Coco Gauff': ['American Player', 'Beat Venus at 15', 'TikTok Generation', 'BLM Speech', 'New Balance Deal', 'Fastest Serve US Woman', 'Social Activist', 'US Open Champion', 'Youngest Titlist'],
-            'Elena Rybakina': ['Kazakhstani Player', 'Born in Russia', 'Tallest Slam Winner', 'Ice Queen Demeanor', 'Wimbledon Champion', 'Big Server', 'Quiet Personality', 'Changed Nationality'],
-            'Jessica Pegula': ['American Player', 'Billionaire Parents', 'Late Bloomer', 'Buffalo Teams Owner', 'Skincare Line', 'Consistent Player', 'Quarter-Final Specialist'],
-            'Ons Jabeur': ['Tunisian Player', 'Minister of Happiness', 'Drop Shot Queen', 'Arab Trailblazer', 'Multiple Slam Finals', 'Crowd Favorite', 'Never Won Slam'],
-            'Maria Sakkari': ['Greek Player', 'Fitness Enthusiast', 'Tattoos', 'Powerful Game', 'Slam Semi-Finalist', 'Fashion Interest'],
-            'Petra Kvitova': ['Czech Player', 'Left-Handed', '2x Wimbledon Champion', 'Knife Attack Survivor', 'Comeback Story', 'Powerful Game'],
+            // Women Current Players
+            'Iga Swiatek': ['Polish Player', 'Right-Handed', 'Current No. 1', 'Former No. 1', 'Bagel Specialist', '4 French Open Titles', 'Multiple Grand Slams', 'Psychologist on Tour', 'Most Weeks at No. 1 Active'],
+            'Aryna Sabalenka': ['Belarusian Player', 'Right-Handed', 'Australian Open Champion', 'Grand Slam Winner', 'Multiple Grand Slams', 'Tiger Tattoo', 'Former No. 1', 'Current No. 2'],
+            'Coco Gauff': ['American Player', 'Right-Handed', 'US Open Champion', 'Grand Slam Winner', 'Beat Venus at 15', 'New Balance Deal', 'Social Activist'],
+            'Elena Rybakina': ['Kazakhstani Player', 'Right-Handed', 'Wimbledon Champion', 'Grand Slam Winner', 'Born in Russia', 'Changed Nationality'],
+            'Jessica Pegula': ['American Player', 'Right-Handed', 'Billionaire Parents', 'Skincare Line', 'Never Won Slam', 'Multiple Slam Quarters', 'Married'],
+            'Ons Jabeur': ['Tunisian Player', 'Right-Handed', 'Minister of Happiness', 'Arab Trailblazer', 'Multiple Slam Finals', 'Never Won Slam', 'Wimbledon Finalist', 'Married'],
+            'Maria Sakkari': ['Greek Player', 'Right-Handed', 'Never Won WTA 1000', 'Multiple Slam Semis', 'Never Won Slam'],
+            'Petra Kvitova': ['Czech Player', 'Left-Handed', '2x Wimbledon Champion', 'Grand Slam Winner', 'Multiple Grand Slams', 'Knife Attack Survivor', 'Former No. 2'],
             
             // Women Legends
-            'Serena Williams': ['American Legend', '23 Grand Slams', 'Catsuit Controversy', 'Pregnant Slam Win', 'Sister Rivalry', 'Fashion Designer', 'Comeback Queen', 'Most Prize Money', 'Power Server', 'GOAT Debate', 'Childbirth Complications'],
-            'Venus Williams': ['American Legend', '7 Grand Slams', 'Equal Pay Advocate', 'Autoimmune Disease', 'Fashion Business', 'Olympic Gold Medalist', 'Longest Career', 'Sister Doubles'],
-            'Steffi Graf': ['German Legend', 'Golden Slam Winner', 'Married Agassi', '377 Weeks No. 1', 'Forehand Slice', 'Speed Player', 'Quiet Champion', 'Father Tax Scandal', 'Calendar Slam'],
-            'Martina Navratilova': ['Czech-American Legend', '9 Wimbledon Titles', 'Gay Rights Pioneer', 'Serve and Volley', 'Evert Rivalry', '18 Singles Slams', 'Fitness Pioneer', 'Cancer Survivor', 'Political Activist'],
-            'Margaret Court': ['Australian Legend', '24 Slam Record', 'Calendar Grand Slam', 'Religious Views', 'Homophobic Comments', 'Arena Controversy', 'Most Slams Ever'],
-            'Monica Seles': ['Yugoslav-American', 'Stabbing Victim', 'Two-Handed Both Sides', 'Grunting Pioneer', 'Teen Domination', 'Comeback Attempt', 'Food Struggles'],
-            'Lindsay Davenport': ['American Legend', 'Tall Baseline Player', 'Consistent Winner', 'Olympic Gold', 'Pregnancy Comebacks', 'Coach Career'],
-            'Maria Sharapova': ['Russian Player', '5 Grand Slams', 'Candy Business', 'Doping Ban', 'Highest Paid Female', 'Shoulder Issues', 'Rivalry with Serena'],
+            'Serena Williams': ['American Legend', 'Right-Handed', '23 Grand Slams', 'Most Grand Slams Open Era', 'Pregnant Slam Win', 'Sister Rivalry', 'Fashion Designer', 'Former No. 1', 'Retired in 2022', 'Married', 'Has Children', 'Olympic Gold Medalist'],
+            'Venus Williams': ['American Legend', 'Right-Handed', '7 Grand Slams', 'Sjögren\'s Syndrome', 'Olympic Gold Medalist', 'Sister Rivalry', 'Still Active', 'Former No. 1', 'Fashion Designer', 'EleVen Brand'],
+            'Steffi Graf': ['German Legend', 'Right-Handed', '22 Grand Slams', 'Golden Slam Winner', 'Calendar Grand Slam', 'Married Agassi', '377 Weeks No. 1', 'Former No. 1', 'Has Children'],
+            'Martina Navratilova': ['Czech-American Legend', 'Left-Handed', '18 Grand Slams', '9 Wimbledon Titles', 'LGBTQ Pioneer', 'Former No. 1', 'Commentary Career'],
+            'Maria Sharapova': ['Russian Legend', 'Right-Handed', '5 Grand Slams', 'Career Grand Slam', 'Candy Business', 'Meldonium Ban', 'Former No. 1', 'Retired in 2020'],
+            'Monica Seles': ['Yugoslav-American Legend', 'Right-Handed', '9 Grand Slams', 'Stabbing Victim', 'Two-Handed Both Sides', 'Former No. 1'],
+            'Li Na': ['Chinese Legend', 'Right-Handed', '2 Grand Slams', 'First Asian Slam Winner', 'Tattoo Rose', 'Retired in 2014', 'Former No. 2', 'Married', 'Has Children'],
+            'Simona Halep': ['Romanian Player', 'Right-Handed', '2 Grand Slams', 'Doping Suspension', 'Former No. 1', 'French Open Champion', 'Wimbledon Champion', 'Married'],
             
-            // Unique/Personality Players
-            'Nick Kyrgios': ['Australian Player', 'Underarm Server', 'Basketball Fan', 'Mental Health Voice', 'Umpire Arguments', 'Tweener Master', 'Never Had Coach', 'Tank Top Style', 'Twitch Streamer', 'Wimbledon Finalist'],
-            'Gael Monfils': ['French Player', 'La Monf Showman', 'Most Athletic Ever', 'Sliding Master', 'Entertainment First', 'Dating Svitolina', 'Never Won Slam', 'Parkour Videos', 'Crowd Pleaser'],
-            'Benoit Paire': ['French Player', 'Tank Master', 'Beard Icon', 'Mental Struggles', 'Covid Bubble Hate', 'Wine Lover', 'Controversial Quotes'],
-            'Fabio Fognini': ['Italian Player', 'Hot Head', 'Clay Specialist', 'Umpire Incidents', 'Married Pennetta', 'Masters Winner'],
-            
-            // Rising Stars
-            'Jannik Sinner': ['Italian Player', 'Skiing Background', 'Carrot Top Hair', 'Coached by Cahill', 'Youngest Italian Winner', 'Calm Demeanor', 'Future No. 1', 'All-Court Game'],
-            'Holger Rune': ['Danish Player', 'Mother on Tour', 'Temper Issues', 'Multiple Coaches', 'Beat Djokovic', 'Young Gun', 'Controversial'],
-            'Felix Auger-Aliassime': ['Canadian Player', 'Uncle Toni Coach', 'Finals Curse Broken', 'Athletic Player', 'Dating Sister Friend', 'Serve Specialist'],
-            'Taylor Fritz': ['American Player', 'American Hope', 'Forehand Weapon', 'Child of Coaches', 'Indian Wells Winner', 'Injury Warrior'],
-            
-            // Doubles Specialists
-            'Bob Bryan': ['American Doubles', 'Twin Partner Mike', 'Chest Bump Celebration', 'Most Doubles Titles', 'Left-Handed Twin', 'Stanford Grad', 'Mirror Twins'],
-            'Mike Bryan': ['American Doubles', 'Twin Partner Bob', 'Right-Handed Twin', 'Most Weeks No. 1 Doubles', 'Switched Hands Play', 'Doubles GOAT'],
-            
-            // Special Achievements
-            'John Isner': ['American Player', 'Longest Match Player (11hrs)', 'Ace Record Match', 'Tallest Top 10', 'Terrible Returner', 'College Star', 'Gentle Giant', 'Never Broke Serve Match'],
-            'Nicolas Mahut': ['French Player', 'Longest Match Player (11hrs)', 'Doubles Specialist', 'Veteran Player', 'Grass Expert'],
-            'Ivo Karlovic': ['Croatian Player', 'Tallest Ever 6ft 11in', 'Most Career Aces', 'Dr. Ivo', 'Oldest Winner', 'Serve Record', 'Never Broke Serve Match'],
-            'Li Na': ['Chinese Legend', 'First Asian Slam', 'Tattoo Rose', 'Comedian Character', 'Late Bloomer', 'Injury Retirement', '2 Grand Slams'],
-            'Simona Halep': ['Romanian Player', '2 Grand Slams', 'Doping Suspension', 'Breast Reduction', 'Counter Puncher', 'Former No. 1', 'Darren Cahill Coach']
+            // Special Players
+            'John Isner': ['American Player', 'Right-Handed', 'Longest Match Player', 'Never Won Masters', 'Retired in 2023', 'Married', 'Has Children'],
+            'Bob Bryan': ['American Doubles Legend', 'Left-Handed', 'Twin Partner Mike', 'Most Doubles Titles', 'Grand Slam Doubles Champion', 'Former No. 1 Doubles', 'Retired in 2020', 'Stanford Graduate', 'Married', 'Has Children'],
+            'Mike Bryan': ['American Doubles Legend', 'Right-Handed', 'Twin Partner Bob', 'Most Grand Slam Doubles', 'Grand Slam Doubles Champion', 'Former No. 1 Doubles', 'Retired in 2020', 'Stanford Graduate', 'Married', 'Has Children']
         },
 
         f1: {
-            // Current Champions
-            'Max Verstappen': ['Dutch Driver', 'Red Bull Racing', '4x World Champion', 'Youngest Race Winner', 'Son of F1 Driver', 'Sim Racing Expert', 'Orange Army Fans', '19 Wins in 2023', '10 Consecutive Wins', 'Aggressive Overtaker', 'Rated #1 by Teams', 'Gaming Addiction'],
-            'Lewis Hamilton': ['British Driver', 'Mercedes AMG', '7x World Champion', 'Most Wins Ever (105)', 'Most Pole Positions (104)', 'Only Black Driver', 'Vegan Lifestyle', 'Fashion Icon', 'Dog Roscoe', 'Knighted by Queen', 'Moving to Ferrari 2025', 'Jewelry Controversy'],
-            'Charles Leclerc': ['Monégasque Driver', 'Scuderia Ferrari', 'Monaco Curse', 'Il Predestinato', 'Piano Player', 'Lost Father Early', 'Youngest Ferrari Pole', 'Qualifying Master', 'Godfather to Pierre Kid', 'Lives in Monaco', 'Heartbreak Kid'],
-            'George Russell': ['British Driver', 'Mercedes AMG', 'PowerPoint King', 'Mr. Saturday', 'Shirtless Memes', 'GPDA Director', 'Tallest on Grid', 'Williams Hero', 'Carmen Montero GF', 'Norfolk Born', 'Poker Faced'],
-            'Sergio Perez': ['Mexican Driver', 'Red Bull Racing', 'Minister of Defense', 'Tyre Whisperer', 'Most Experienced', 'Saved Force India', 'Mexican Hero', 'Netflix Star', 'Contract Drama', 'Street Circuit King', 'Team Orders Victim'],
-            'Carlos Sainz Jr.': ['Spanish Driver', 'Scuderia Ferrari', 'Smooth Operator', 'Rally Legend Son', 'Chili Nickname', 'Golf Addict', 'Only Non-RB Win 2023', 'Singapore Master', 'Madrid Native', 'Moving to Williams', 'Unlucky Timing'],
-            'Lando Norris': ['British Driver', 'McLaren F1', 'Twitch Streamer', 'Milk Before Cereal', 'Youngest British Debut', 'Gaming Addict', 'Best Friends with Max', 'Quadrant CEO', 'Miami 2024 First Win', 'Helmet Designer', 'Mental Health Voice'],
-            'Oscar Piastri': ['Australian Driver', 'McLaren F1', 'Alpine Drama', 'Rookie of Year', 'F2 Champion First Try', 'Cricket Fan', 'Dry Humor', 'Webber Managed', 'Sprint Winner', 'Twitter Famous', 'Calm Rookie'],
-            'Fernando Alonso': ['Spanish Driver', 'Aston Martin', '2x World Champion', 'Oldest on Grid', 'Kimoa Brand', 'Cycling Fanatic', 'Master of Starts', 'Rookie Destroyer', 'Triple Crown Attempt', 'Magic Alonso', 'Mind Games Expert'],
-            
-            // Mid-Grid Heroes
-            'Pierre Gasly': ['French Driver', 'Alpine F1', 'Liked by Gasly', 'Redemption Story', 'Fashion Week Regular', 'Monza Winner', 'Charles BFF', 'Rouen Native', 'Lost Best Friend', 'AlphaTauri Hero'],
-            'Esteban Ocon': ['French Driver', 'Alpine F1', 'Tall Problems', 'Poverty Background', 'Hungary Winner', 'Max Enemy', 'Netflix Villain', 'Mercedes Junior', 'French Rivalry'],
-            'Valtteri Bottas': ['Finnish Driver', 'Stake F1 Sauber', 'Nude Calendar', 'Coffee Business', 'Mullet Era', 'Cycling Champion', 'Bad Luck', 'To Whom It May Concern', 'Rally Skills', 'Porridge Man'],
-            'Zhou Guanyu': ['Chinese Driver', 'Stake F1 Sauber', 'First Chinese F1', 'Silverstone Crash', 'Fashion Icon', 'Sheffield United Fan', 'Cat Dad', 'Speaks 3 Languages', 'Sponsors Galore'],
-            'Alex Albon': ['Thai-British Driver', 'Williams Racing', 'Red Bull PTSD', 'Pets Everywhere', 'Appendix 2022', 'Golf Obsessed', 'Lily Girlfriend', 'Podcast King', 'Nice Guy'],
-            'Logan Sargeant': ['American Driver', 'Williams Racing', 'Only American', 'Florida Man', 'Fishing Love', 'Europe Struggles', 'Under Pressure', 'First US Since 2015', 'Rookie Struggles'],
-            'Kevin Magnussen': ['Danish Driver', 'Haas F1', 'Viking Nickname', 'Most Penalty Points', 'Door Banger', 'Suck My Balls Quote', 'F1 Dad', 'IMSA Champion', 'Comeback King'],
-            'Nico Hulkenberg': ['German Driver', 'Haas F1', 'No Podium Record', 'Le Mans Winner', 'Tallest Ever', 'Hulkenback', 'Reserve Hero', 'Nearly Mercedes'],
-            'Yuki Tsunoda': ['Japanese Driver', 'RB Team', 'Shortest on Grid', 'Radio Rage', 'Cooking Videos', 'Italy Resident', 'Swearing King', 'Honda Hope', 'Alpha Male'],
-            'Daniel Ricciardo': ['Australian Driver', 'RB Team', 'Honey Badger', 'Shoey Creator', 'Big Smile', 'Netflix Star', 'Broken Hand', 'Comedy King', 'Perth Born', 'Late Braker'],
-            'Lance Stroll': ['Canadian Driver', 'Aston Martin', 'Billionaire Dad', 'Pole as Rookie', 'Injury Prone', 'Quiet Guy', 'Youngest Podium', 'Pay Driver Debate', 'Bike Accidents'],
+            // Current 2024 Grid
+            'Max Verstappen': ['Dutch Driver', 'Red Bull Racing', 'Current Driver', '3x World Champion', 'Youngest Race Winner', 'Son of F1 Driver', 'Sim Racing Expert', '19 Wins in 2023', '10 Consecutive Wins', 'Monaco Resident'],
+            'Sergio Perez': ['Mexican Driver', 'Red Bull Racing', 'Current Driver', 'Former Racing Point Driver', 'Former McLaren Driver', 'Married', 'Has Children'],
+            'Lewis Hamilton': ['British Driver', 'Mercedes AMG', 'Current Driver', '7x World Champion', 'Joint Most Championships', 'Most Wins Ever', 'Most Pole Positions', 'Most Podiums Ever', 'Only Black Driver', 'Vegan', 'Knighted by Queen', 'Moving to Ferrari 2025', 'Monaco Resident'],
+            'George Russell': ['British Driver', 'Mercedes AMG', 'Current Driver', 'PowerPoint Presentations', 'GPDA Director', 'Former Williams Driver', 'Mercedes Junior'],
+            'Charles Leclerc': ['Monégasque Driver', 'Scuderia Ferrari', 'Current Driver', 'Monaco Curse', 'Piano Player', 'Lost Godfather', 'Lost Father', 'Youngest Ferrari Pole', 'Ferrari Academy', 'Monaco Resident'],
+            'Carlos Sainz Jr.': ['Spanish Driver', 'Scuderia Ferrari', 'Current Driver', 'Rally Legend Son', 'Golf Enthusiast', 'Moving to Williams 2025', 'Former McLaren Driver', 'Former Renault Driver', 'Former Toro Rosso Driver', 'Madrid Native'],
+            'Lando Norris': ['British Driver', 'McLaren F1', 'Current Driver', 'Twitch Streamer', 'Quadrant CEO', 'First Win Miami 2024', 'McLaren Academy', 'Monaco Resident'],
+            'Oscar Piastri': ['Australian Driver', 'McLaren F1', 'Current Driver', 'Alpine Contract Drama', 'F2 Champion', 'F3 Champion', 'Webber Managed', 'Sprint Winner', 'Alpine Academy'],
+            'Fernando Alonso': ['Spanish Driver', 'Aston Martin', 'Current Driver', '2x World Champion', 'Oldest on Grid', 'Kimoa Brand', '32 Race Wins', 'Former Ferrari Driver', 'Former McLaren Driver', 'Former Renault Driver', 'Former Alpine Driver', 'Le Mans Winner', 'Triple Crown Attempt'],
+            'Lance Stroll': ['Canadian Driver', 'Aston Martin', 'Current Driver', 'Billionaire Dad Owns Team', 'Youngest Rookie Podium', 'Pole Position Turkey', 'Former Williams Driver', 'Former Racing Point Driver'],
+            'Pierre Gasly': ['French Driver', 'Alpine F1', 'Current Driver', 'Monza Winner', 'Former Red Bull Driver', 'Former AlphaTauri Driver'],
+            'Esteban Ocon': ['French Driver', 'Alpine F1', 'Current Driver', 'Hungary Winner', 'Mercedes Junior', 'Former Force India Driver', 'Former Manor Driver'],
+            'Valtteri Bottas': ['Finnish Driver', 'Stake F1 Sauber', 'Current Driver', 'Former Mercedes Driver', '10 Race Wins', 'Coffee Business', 'Married'],
+            'Zhou Guanyu': ['Chinese Driver', 'Stake F1 Sauber', 'Current Driver', 'First Chinese F1 Driver', 'Silverstone Crash Survivor', 'Alfa Romeo Academy', 'Alpine Academy'],
+            'Alex Albon': ['Thai-British Driver', 'Williams Racing', 'Current Driver', 'Former Red Bull Driver', 'Former Toro Rosso Driver', 'Red Bull Reserve'],
+            'Logan Sargeant': ['American Driver', 'Williams Racing', 'Current Driver', 'Only American on Grid', 'First American Since 2015', 'Williams Academy'],
+            'Kevin Magnussen': ['Danish Driver', 'Haas F1', 'Current Driver', 'Son of F1 Driver', 'Former McLaren Driver', 'Former Renault Driver', 'Married', 'Has Children'],
+            'Nico Hulkenberg': ['German Driver', 'Haas F1', 'Current Driver', 'No Podium Record', 'Most Races Without Podium', 'Le Mans Winner', 'Moving to Sauber 2025', 'Former Renault Driver', 'Former Force India Driver', 'Former Williams Driver'],
+            'Yuki Tsunoda': ['Japanese Driver', 'RB Team', 'Current Driver', 'Shortest on Grid', 'Lives in Italy', 'Red Bull Junior', 'Honda Protégé'],
+            'Daniel Ricciardo': ['Australian Driver', 'RB Team', 'Current Driver', 'Honey Badger', 'Shoey Inventor', '8 Race Wins', 'Former Red Bull Driver', 'Former McLaren Driver', 'Former Renault Driver'],
             
             // Legends
-            'Michael Schumacher': ['German Legend', '7x World Champion', '91 Race Wins', 'Ferrari God', 'Skiing Accident', 'Rain Master', 'Dirty Tricks', 'Most Fastest Laps', 'Benetton Hero', 'Private Now', 'Fitness Pioneer'],
-            'Ayrton Senna': ['Brazilian Legend', '3x World Champion', 'Rain God', 'Died at Imola', 'Monaco Master', 'Prost Rivalry', 'Religious Man', 'McLaren Icon', 'Brazil Hero', 'Qualifying King'],
-            'Alain Prost': ['French Legend', '4x World Champion', 'The Professor', 'Smooth Style', 'Senna Rivalry', 'Political Master', 'Four Teams Champ', '51 Wins', 'Calculated Racer'],
-            'Niki Lauda': ['Austrian Legend', '3x World Champion', 'Fire Survivor', '1976 Comeback', 'Airline Owner', 'Mercedes Boss', 'Brutal Honesty', 'Red Cap Icon', 'James Hunt Rival'],
-            'Juan Manuel Fangio': ['Argentine Legend', '5x World Champion', 'El Maestro', 'Oldest Champion', 'Kidnapped Story', 'Win Percentage Record', '1950s King', 'Gentleman Racer'],
-            'Jim Clark': ['Scottish Legend', '2x World Champion', 'Farmer Background', 'Lotus Driver', 'Natural Talent', 'Died Young', 'Indy 500 Winner', 'Humble Champion'],
-            'Jackie Stewart': ['Scottish Legend', '3x World Champion', 'Safety Pioneer', 'Dyslexia Advocate', 'Tartan Cap', 'Flying Scot', 'TV Career', 'Team Owner'],
-            'Nelson Piquet': ['Brazilian Legend', '3x World Champion', 'Playboy Image', 'Political Comments', 'Max Girlfriend Dad', 'Senna Rival', 'Brabham Hero'],
-            'Nigel Mansell': ['British Legend', 'World Champion', 'Il Leone', 'Mustache Icon', 'IndyCar Champion', 'People Champion', 'Nearly Moments'],
-            'Damon Hill': ['British Champion', 'Graham Son', 'Senna Partner', 'Schumacher Rival', '1996 Champion', 'Musician Now', 'BBC Voice'],
-            'Jacques Villeneuve': ['Canadian Champion', 'Gilles Son', 'IndyCar Champion', 'BAR Disaster', 'Outspoken Views', 'Musician Too'],
-            'Kimi Raikkonen': ['Finnish Champion', 'Iceman', 'Leave Me Alone', 'Drinking Stories', 'Rally Driver', 'One-Liner King', 'Ferrari Champion', 'Oldest Winner'],
-            'Jenson Button': ['British Champion', 'Brawn Miracle', 'Smooth Driver', 'Triathlete', 'Sky Pundit', 'Japan Love', 'Playboy Era', 'McLaren Years'],
-            'Sebastian Vettel': ['German 4x Champion', 'Youngest Champion', 'Red Bull Era', 'Finger Wag', 'Eco Warrior', 'Bee Hotels', 'Inspector Seb', 'Ferrari Fail', 'Retired Young'],
-            'Mika Hakkinen': ['Finnish 2x Champion', 'Flying Finn', 'McLaren Hero', 'Schumacher Rival', 'Sabbatical Forever', 'Adelaide Crash', 'Quiet Champion'],
+            'Michael Schumacher': ['German Legend', 'Retired Driver', '7x World Champion', 'Joint Most Championships', '91 Race Wins', 'Ferrari Legend', 'Skiing Accident', 'Most Fastest Laps', 'Former Mercedes Driver', 'Former Benetton Driver', 'Has Children'],
+            'Ayrton Senna': ['Brazilian Legend', '3x World Champion', '41 Race Wins', 'Died at Imola 1994', 'Monaco Master', 'McLaren Legend'],
+            'Alain Prost': ['French Legend', '4x World Champion', 'The Professor', '51 Race Wins', 'Former Ferrari Driver', 'Former McLaren Driver', 'Former Williams Driver', 'Former Renault Driver'],
+            'Niki Lauda': ['Austrian Legend', '3x World Champion', 'Nürburgring Fire Survivor', '1976 Comeback', 'Airline Owner', 'Red Cap Icon', 'Died in 2019', 'Former Ferrari Driver', 'Former McLaren Driver', 'Mercedes Non-Executive Chairman'],
+            'Juan Manuel Fangio': ['Argentine Legend', '5x World Champion', 'Oldest Champion', 'Best Win Percentage', '1950s Era'],
+            'Jim Clark': ['Scottish Legend', '2x World Champion', 'Lotus Legend', 'Died at Hockenheim 1968', 'Indy 500 Winner'],
+            'Jackie Stewart': ['Scottish Legend', '3x World Champion', 'Safety Pioneer', 'Dyslexia Advocate', 'The Flying Scot', 'TV Commentator'],
+            'Nelson Piquet': ['Brazilian Legend', '3x World Champion', 'Former Brabham Driver', 'Former Williams Driver', 'Has Children'],
+            'Nigel Mansell': ['British Legend', '1992 World Champion', 'Mustache Icon', 'IndyCar Champion', 'Former Ferrari Driver', 'Former Williams Driver', 'Former McLaren Driver'],
+            'Damon Hill': ['British Legend', '1996 World Champion', 'Graham Hill\'s Son', 'Sky Sports Pundit', 'Former Williams Driver', 'Former Jordan Driver'],
+            'Kimi Raikkonen': ['Finnish Legend', 'Retired Driver', '2007 World Champion', 'The Iceman', 'Most Races Started', 'Retired in 2021', 'Former Ferrari Driver', 'Former McLaren Driver', 'Former Alfa Romeo Driver', 'Married', 'Has Children'],
+            'Jenson Button': ['British Legend', 'Retired Driver', '2009 World Champion', 'Brawn GP Champion', 'Sky Sports Pundit', 'Former McLaren Driver', 'Former BAR Driver', 'Married'],
+            'Sebastian Vettel': ['German Legend', 'Retired Driver', '4x World Champion', 'Youngest Champion', 'Red Bull Domination', 'Environmental Activist', 'Retired in 2022', 'Former Ferrari Driver', 'Former Red Bull Driver', 'Former Aston Martin Driver', 'Married', 'Has Children'],
+            'Mika Hakkinen': ['Finnish Legend', '2x World Champion', 'The Flying Finn', 'Former McLaren Driver'],
             
-            // Recent Retirements
-            'Romain Grosjean': ['French Driver', 'Bahrain Fire Survivor', 'Phoenix Metaphor', 'IndyCar Switch', 'Cookbook Author', 'Mental Health', 'Haas Years'],
-            'Robert Kubica': ['Polish Driver', 'Rally Crash', 'One-Handed Return', 'Canada Winner', 'Comeback Story', 'Rally Champion', 'Williams Return'],
-            'Marcus Ericsson': ['Swedish Driver', 'IndyCar Champion', 'Indy 500 Winner', 'Pay Driver Past', 'Sauber Years', 'American Success'],
-            
-            // Special Mentions
-            'Pastor Maldonado': ['Venezuelan Driver', 'Crashtor', 'Spain Winner', 'Most Crashes', 'PDVSA Money', 'Meme Legend', 'One Hit Wonder'],
-            'Nikita Mazepin': ['Russian Driver', 'MazeSpin', 'Shortest Career', 'Oligarch Father', 'Groping Video', 'Ukraine War Exit', 'Haas Disaster'],
-            'Nicholas Latifi': ['Canadian Driver', 'Abu Dhabi 2021', 'Pay Driver', 'Williams Years', 'Nutella Sponsor', 'Nice Guy Rep'],
-            'Mick Schumacher': ['German Driver', 'Michael Son', 'Pressure Life', 'Haas Years', 'Mercedes Reserve', 'WEC Move', 'Netflix Focus']
+            // Recent Drivers
+            'Mick Schumacher': ['German Driver', 'Michael\'s Son', 'Former Haas Driver', 'Mercedes Reserve', 'Alpine WEC Driver', 'Ferrari Academy', 'F2 Champion'],
+            'Romain Grosjean': ['French Driver', 'Bahrain Fire Survivor', 'Phoenix Tattoo', 'IndyCar Driver', 'Former Haas Driver', 'Former Lotus Driver', 'Married', 'Has Children'],
+            'Robert Kubica': ['Polish Driver', 'Rally Accident Survivor', 'Canada 2008 Winner', 'Former BMW Driver', 'Former Williams Driver']
         },
 
         tv: {
-            // Castle Main Characters
-            'Richard Castle': ['Castle Writer', 'Nikki Heat Creator', 'Poker with Patterson', 'Two Ex-Wives', 'Single Dad to Alexis', 'Ruggedly Handsome', 'Halloween Lover', 'Laser Tag Pro', 'Theory Builder', 'Ferrari Owner', 'Father Was CIA', 'Firefly References'],
-            'Kate Beckett': ['Castle Detective', 'Mother Murder Case', 'Stanford Graduate', 'Pre-Law Student', 'Secret Comic Fan', 'Motorcycle Rider', 'Russian Literature', 'Shot by Sniper', 'PTSD Survivor', 'Married Castle S7', 'Captain Promotion', 'One Writer Girl'],
-            'Alexis Castle': ['Castle Daughter', 'Mature Teen', 'Columbia Student', 'Paris Kidnapping', 'Brief PI Work', 'Red Hair Icon', 'Role Reversal Dad', 'Dating Cops', 'Medical Ambitions', 'Voice of Reason'],
-            'Martha Rodgers': ['Castle Mother', 'Broadway Actress', 'Drama School Owner', 'Multiple Marriages', 'Lives with Rick', 'Younger Men Dating', 'Theatrical Daily', 'Lost Money Husband', 'Wine Lover', 'Acting Teacher'],
-            'Javier Esposito': ['Castle Detective', 'Special Forces', 'Lanie Romance', 'Spanish Speaker', 'Ryan Partner', 'Sniper Expert', 'Protective Nature', 'Tough Exterior', 'Loyal Friend'],
-            'Kevin Ryan': ['Castle Detective', 'Irish Heritage', 'Jenny Husband', 'Undercover Fenton', 'Baby Sarah Grace', 'Castle Books Fan', 'Ex-Narcotics', 'Nearly Died S3', 'Best Friend Espo', 'Family Man'],
-            'Lanie Parish': ['Castle ME', 'Beckett BFF', 'Relationship Expert', 'Esposito Drama', 'Sass Queen', 'Only ME Shown', 'Fashion Forward', 'Truth Teller', 'Supportive Friend'],
-            'Roy Montgomery': ['Castle Captain S1-3', 'Father Figure', 'Dark Secret', 'Died Protecting', 'Beckett Mentor', 'Family Man', 'Corruption Past', 'Heroic Death', 'Team Protector'],
-            'Victoria Gates': ['Castle Captain S4-7', 'Iron Gates', 'By the Book', 'Ex-Internal Affairs', 'Hates Castle First', 'Softball Player', 'Earned Respect', 'Fair Leader', 'Tough Love'],
-            'Jenny Ryan': ['Castle Recurring', 'Ryan Wife', 'Real Life Couple', 'Pregnant Twice', 'Supportive Wife', 'Normal Life', 'Wedding Episode', 'Team Mom'],
-            'Jim Beckett': ['Castle Recurring', 'Kate Father', 'Alcoholic Past', 'Lawyer Career', 'Lost Wife Johanna', 'Recovery Story', 'Protective Dad', 'Case Involvement'],
-            'Hayley Shipton': ['Castle S8 Regular', 'British MI6', 'Security Expert', 'Free Spirit', 'Quick Wit', 'Castle PI Partner', 'Action Hero'],
-            'Vikram Singh': ['Castle S8 Regular', 'NSA Analyst', 'LokSat Case', 'Tech Expert', 'Mysterious Past', 'Beckett Ally', 'Sacrificed Self'],
+            // Castle Characters
+            'Richard Castle': ['Castle Character', 'Main Character', 'Writer', 'Mystery Novelist', 'Poker Player', 'Single Dad', 'Married', 'Has Children'],
+            'Kate Beckett': ['Castle Character', 'Main Character', 'NYPD Detective', 'Team Leader', 'Stanford Graduate', 'Became Captain', 'Married', 'Has Children', 'Motorcycle Rider'],
+            'Alexis Castle': ['Castle Character', 'Recurring Character', 'Columbia Student', 'Medical School', 'Kidnapped in Paris', 'Red Hair'],
+            'Martha Rodgers': ['Castle Character', 'Recurring Character', 'Broadway Actress', 'Acting School Owner', 'Multiple Marriages'],
+            'Javier Esposito': ['Castle Character', 'Main Character', 'NYPD Detective', 'Former Special Forces', 'Partner to Ryan'],
+            'Kevin Ryan': ['Castle Character', 'Main Character', 'NYPD Detective', 'Partner to Esposito', 'Married', 'Has Children', 'Irish Descent'],
+            'Lanie Parish': ['Castle Character', 'Recurring Character', 'Medical Examiner'],
+            'Roy Montgomery': ['Castle Character', 'Main Character', 'NYPD Captain', 'Team Leader', 'Died Protecting Beckett', 'Married', 'Has Children'],
+            'Victoria Gates': ['Castle Character', 'Main Character', 'NYPD Captain', 'Team Leader', 'Iron Gates Nickname', 'Replaced Montgomery'],
+            'Jenny Ryan': ['Castle Character', 'Recurring Character', 'Married', 'Has Children'],
             
             // The Mentalist Characters
-            'Patrick Jane': ['Mentalist Consultant', 'Family Murdered', 'Fake Psychic Past', 'Tea Addict', 'CBI Attic Sleeper', 'Memory Palace', 'Origami Expert', 'Height Fear', 'Citroën DS Car', 'Red John Killer', 'Hypnotist', 'Lisbon Love'],
-            'Teresa Lisbon': ['Mentalist Agent', 'Chicago Born', 'Mother Drunk Death', 'Raised Brothers', 'Catholic Faith', 'Cross Necklace', 'By the Book', 'Pregnant Finale', 'Flying Fear', 'Bad Cook', 'Team Leader', 'Jane Partner'],
-            'Kimball Cho': ['Mentalist Agent', 'Korean-American', 'Ex-Gang Member', 'Deadpan Humor', 'Sci-Fi Reader', 'Pain Med Issue', 'FBI Promotion', 'Stoic Always', 'Stock Trader Past', 'Loyal Soldier'],
-            'Grace Van Pelt': ['Mentalist Agent', 'Computer Expert', 'Religious Girl', 'Rigsby Wife', 'Redhead Tech', 'Killed Fiancé', 'Left for Business', 'Naive Start', 'Strong Finish'],
-            'Wayne Rigsby': ['Mentalist Agent', 'Arson Expert', 'Father Issues', 'Food Obsessed', 'Grace Love', 'Son Ben', 'Left with Wife', 'Team Loyalty', 'Gentle Giant'],
-            'Red John': ['Mentalist Villain', 'Sheriff Identity', 'Blake Association', 'Smiley Face', '41+ Victims', 'Saved Jane Once', 'Height Fear', 'Bird Phobia', 'Serial Killer'],
-            'Brett Stiles': ['Mentalist Recurring', 'Visualize Leader', 'Cult Master', 'Jane Mentor', 'Ambiguous Morals', 'Charismatic', 'Red John Link', 'Power Player'],
-            'JJ LaRoche': ['Mentalist Recurring', 'Internal Affairs', 'Later SAC', 'Killed S6', 'Complex Character', 'Jane Respect'],
-            'Tommy Volker': ['Mentalist Villain', 'Billionaire Killer', 'Lisbon Obsession', 'Child Murderer', 'Untouchable Image', 'Season 5 Arc'],
-            'Erica Flynn': ['Mentalist Recurring', 'Matchmaker Killer', 'Jane Interest', 'Seductress', 'Escape Artist', 'Returns Later'],
+            'Patrick Jane': ['Mentalist Character', 'Main Character', 'CBI Consultant', 'Fake Psychic Past', 'Family Killed by Red John', 'Tea Drinker', 'Memory Palace', 'Sleeps in Attic', 'Married'],
+            'Teresa Lisbon': ['Mentalist Character', 'Main Character', 'CBI Agent', 'FBI Agent', 'Team Leader', 'Catholic', 'Raised Brothers After Parents Died', 'Marries Jane', 'Married', 'Has Children'],
+            'Kimball Cho': ['Mentalist Character', 'Main Character', 'CBI Agent', 'FBI Agent', 'Former Gang Member', 'Becomes FBI Agent', 'Team Leader'],
+            'Grace Van Pelt': ['Mentalist Character', 'Main Character', 'CBI Agent', 'Computer Expert', 'Marries Rigsby', 'Married', 'Has Children', 'Leaves CBI', 'Red Hair'],
+            'Wayne Rigsby': ['Mentalist Character', 'Main Character', 'CBI Agent', 'Arson Specialist', 'Marries Van Pelt', 'Married', 'Has Children', 'Has Son Benjamin', 'Leaves CBI'],
+            'Red John': ['Mentalist Character', 'Main Antagonist', 'Serial Killer', 'Sheriff Thomas McAllister', 'Blake Association Leader'],
             
             // Blacklist Characters
-            'Raymond Reddington': ['Blacklist Criminal', 'Concierge of Crime', 'Number 4 Wanted', 'Fedora Icon', 'Story Master', 'Impostor Theory', 'Navy Past', 'Classical Music', 'Dembe Friend', 'Liz Father Maybe', 'Criminal Empire', 'Deal with FBI'],
-            'Elizabeth Keen': ['Blacklist FBI', 'Masha Rostova', 'Fire Memory', 'Adoptive Parents', 'Profiler Expert', 'Tom Wife', 'KGB Mother', 'Hand Scar', 'Died Returned', 'Red Daughter', 'Task Force'],
-            'Donald Ressler': ['Blacklist FBI', 'By the Book', 'Drug Addiction', 'Brother Death', 'Red Hatred First', 'Loyal Partner', 'Detroit Native', 'Straight Arrow', 'Team Second'],
-            'Harold Cooper': ['Blacklist Director', 'Kuwait Veteran', 'Medical Issues', 'Family Values', 'Moral Compass', 'Team Protector', 'Political Links', 'Fair Leader'],
-            'Aram Mojtabai': ['Blacklist Tech', 'MIT Graduate', 'Nervous Guy', 'Samar Love', 'Hacker Skills', 'Comic Relief', 'Red Loyalty', 'Field Growth', 'Kind Heart'],
-            'Dembe Zuma': ['Blacklist Bodyguard', 'Child Soldier', 'Imam Training', '4 Languages', 'Red Conscience', 'Daughter Isabella', 'FBI Agent Later', 'Loyal Friend'],
-            'Tom Keen': ['Blacklist Spy', 'Jacob Phelps', 'Teacher Cover', 'Liz Husband', 'Spy School', 'Redemption Show', 'Killed Off', 'Complex Past'],
-            'Samar Navabi': ['Blacklist Agent', 'Mossad Past', 'Aram Love', 'Memory Loss', 'Left Show', 'Strong Woman', 'International'],
-            'Mr. Kaplan': ['Blacklist Cleaner', 'Kate Real Name', 'Red Betrayal', 'Liz Protector', 'Suicide Jump', 'Mother Figure', 'Dark Past'],
-            'Glen Carter': ['Blacklist DMV', 'Red Annoyance', 'Comic Relief', 'Loyal Helper', 'Husky Voice', 'Unexpected Death', 'Fan Favorite'],
+            'Raymond Reddington': ['Blacklist Character', 'Main Character', 'Criminal Mastermind', 'The Concierge of Crime', 'Naval Intelligence Past', 'FBI Informant'],
+            'Elizabeth Keen': ['Blacklist Character', 'Main Character', 'FBI Agent', 'Profiler', 'Fake Death', 'Married', 'Has Children', 'Adopted'],
+            'Donald Ressler': ['Blacklist Character', 'Main Character', 'FBI Agent', 'Addiction Struggle'],
+            'Harold Cooper': ['Blacklist Character', 'Main Character', 'FBI Assistant Director', 'Team Leader', 'Task Force Leader', 'Married', 'Has Children'],
+            'Aram Mojtabai': ['Blacklist Character', 'Main Character', 'FBI Tech Specialist', 'Computer Expert', 'Becomes Team Leader'],
+            'Dembe Zuma': ['Blacklist Character', 'Main Character', 'Former Child Soldier', 'Becomes FBI Agent', 'FBI Agent', 'Has Children'],
+            'Tom Keen': ['Blacklist Character', 'Main Character', 'Covert Operative', 'Multiple Identities', 'Killed by Ian Garvey', 'Married', 'Has Children'],
+            'Samar Navabi': ['Blacklist Character', 'Main Character', 'Mossad Agent', 'FBI Agent', 'Brain Injury', 'Leaves Due to Condition'],
+            'Mr. Kaplan': ['Blacklist Character', 'Recurring Character', 'Cleaner', 'Kate Nemec', 'Jumps Off Bridge'],
             
             // SWAT Characters
-            'Daniel Harrelson': ['SWAT Leader', 'Hondo Nickname', 'South LA Native', 'Community Bridge', 'Dating Issues', 'Father Legacy', 'Marine Veteran', 'Principled Man', 'Team 20 Squad'],
-            'David Kay': ['SWAT Sergeant', 'Deacon Nickname', 'Family 4 Kids', 'Money Struggles', 'Religious Man', 'Second Command', 'Calm Pressure', 'Annie Husband', 'Retirement Reverse'],
-            'Dominique Luca': ['SWAT Officer', '3rd Gen SWAT', 'Grandfather Legacy', 'Food Truck', 'Big Heart', 'Team Joker', 'Protective Guy', 'DJ Past'],
-            'Victor Tan': ['SWAT Officer', 'Tech Expert', 'DJ Background', 'Asian Rep', 'Bonnie Dating', 'Young Member', 'Smart Tactics'],
-            'Jim Street': ['SWAT Officer', 'Foster Past', 'Mom Prison', 'Motorcycle Rider', 'Buck Sponsor', 'Chris Romance', 'Impulsive', 'Long Beach Move', 'Engaged Chris'],
-            'Christina Alonso': ['SWAT Officer S1-5', 'First Female', 'K9 Background', 'Bisexual Rep', 'Gang Survivor', 'Left for Cause', 'Street Love', 'Sniper Role'],
-            'Jessica Cortez': ['SWAT Captain S1-2', 'Hondo Ex', 'FBI Move', 'Immigrant Story', 'Leadership', 'Left Show', 'Undercover Exit'],
-            'Robert Hicks': ['SWAT Commander', 'Hondo Mentor', 'Buck Firer', 'Political Savvy', 'Molly Father', 'Leadership Wisdom', 'Fair Boss'],
-            'Annie Kay': ['SWAT Recurring', 'Deacon Wife', 'Lawyer Dream', 'Stroke Survivor', '4 Kids Mother', 'Support System', 'Strong Woman'],
-            'Nichelle Carmichael': ['SWAT Recurring', 'Hondo Love', 'Community Activist', 'On-Off Romance', 'Baby Vivienne', 'Inspector Role'],
+            'Daniel Harrelson': ['SWAT Character', 'Main Character', 'Team Leader', 'Sergeant', 'SWAT Officer', 'Divorced', 'Has Children', 'Born and Raised in LA'],
+            'David Kay': ['SWAT Character', 'Main Character', 'Team Leader', 'SWAT Officer', 'Married', 'Has Children', 'Deacon Nickname'],
+            'Dominique Luca': ['SWAT Character', 'Main Character', 'SWAT Officer', 'Third Generation SWAT', 'Grandfather Was SWAT', 'Food Truck Owner'],
+            'Victor Tan': ['SWAT Character', 'Main Character', 'SWAT Officer', 'Former Vice Detective', 'Rescued from Bombing'],
+            'Jim Street': ['SWAT Character', 'Main Character', 'SWAT Officer', 'Foster Kid', 'Mother in Prison', 'Motorcycle Rider'],
+            'Christina Alonso': ['SWAT Character', 'Main Character', 'SWAT Officer', 'First Female SWAT', 'Bilingual', 'Left for Germany'],
+            'Jessica Cortez': ['SWAT Character', 'Recurring Character', 'SWAT Captain', 'Team Leader', 'Leaves for FBI', 'FBI Agent'],
+            'Robert Hicks': ['SWAT Character', 'Recurring Character', 'Commander', 'Team Leader'],
             
             // White Collar Characters
-            'Neal Caffrey': ['White Collar Con', 'Master Forger', 'Art Thief', 'Anklet Tracker', 'Kate Obsessed', 'Charm Master', 'Wine Expert', 'Perfect Suits', 'Prison Escape', 'Father Mystery', 'FBI Asset', 'Series Death'],
-            'Peter Burke': ['White Collar FBI', 'Neal Handler', 'Elizabeth Husband', 'Dog Satchmo', 'Harvard Law', 'Brooklyn Home', 'Trust Issues', 'Baseball Fan', 'By the Book', 'Father Figure'],
-            'Elizabeth Burke': ['White Collar Wife', 'Event Planner', 'Neal Friend', 'Marriage Goals', 'Wine Knowledge', 'Art Lover', 'Voice Reason', 'Kidnapped Once'],
-            'Mozzie': ['White Collar Criminal', 'Conspiracy Theory', 'Many Aliases', 'Chess Master', 'Teddy Winters', 'Government Hate', 'Wine Vault', 'Detroit Born', 'Neal Friend'],
-            'Diana Berrigan': ['White Collar FBI', 'Harvard Grad', 'Christie Partner', 'Tough Agent', 'Loyal Team', 'Peter Trust', 'Returns Show'],
-            'Clinton Jones': ['White Collar FBI', 'Harvard Grad', 'Reliable Agent', 'Team Player', 'Probation Story', 'By the Book', 'Steady Hand'],
-            'Sara Ellis': ['White Collar Insurance', 'Neal Love', 'Sterling Bosch', 'Smart Woman', 'Sister Runaway', 'Trust Issues', 'Returns Often', 'Strong Character'],
-            'June Ellington': ['White Collar Landlady', 'Widow Story', 'Byron Wife', 'Neal Supporter', 'Granddaughters', 'Wise Woman', 'Jazz Singer', 'Team Helper'],
-            'Reese Hughes': ['White Collar FBI Boss', 'Old School', 'Fair Leader', 'Peter Boss', 'Retirement Arc', 'Respected Chief'],
-            'Matthew Keller': ['White Collar Rival', 'Neal Enemy', 'Dangerous Man', 'Kate Link', 'Returns Often', 'Prison Escapes', 'Smart Criminal'],
+            'Neal Caffrey': ['White Collar Character', 'Main Character', 'Con Artist', 'Art Forger', 'Criminal', 'Anklet Tracker', 'Faked Death'],
+            'Peter Burke': ['White Collar Character', 'Main Character', 'FBI Agent', 'Team Leader', 'Married', 'Dog Named Satchmo'],
+            'Elizabeth Burke': ['White Collar Character', 'Main Character', 'Event Planner', 'Married', 'Burke Premiere Events'],
+            'Mozzie': ['White Collar Character', 'Main Character', 'Con Artist', 'Criminal', 'Conspiracy Theorist', 'No Real Name', 'Chess Player'],
+            'Diana Berrigan': ['White Collar Character', 'Main Character', 'FBI Agent', 'Harvard Law', 'Has Girlfriend Christie'],
+            'Clinton Jones': ['White Collar Character', 'Main Character', 'FBI Agent', 'Harvard Graduate'],
             
             // Prodigal Son Characters
-            'Malcolm Bright': ['Prodigal Profiler', 'Serial Killer Son', 'Night Terrors', 'Hand Tremor', 'Whitly Name', 'Dani Romance', 'Drug Need', 'Sleep Restraints', 'Brilliant Mind'],
-            'Martin Whitly': ['Prodigal Killer', 'The Surgeon', '23 Victims', 'Malcolm Father', 'Manipulative', 'Medical Expert', 'Charm Mask', 'Prison Life'],
-            'Gil Arroyo': ['Prodigal Lieutenant', 'Father Figure', 'Jackie Husband', 'Harlem Native', 'Saved Malcolm', 'Protective Boss', 'Heart Issues', 'Team Leader'],
-            'Dani Powell': ['Prodigal Detective', 'Ex-Undercover', 'Drug Past', 'Malcolm Love', 'Tough Woman', 'Trust Earned', 'Action Ready'],
-            'Jessica Whitly': ['Prodigal Mother', 'Vodka Regular', 'Society Woman', 'Kids Protector', 'Martin Ex', 'Denial Queen', 'Wealthy Life', 'Strong Will'],
-            'Ainsley Whitly': ['Prodigal Sister', 'TV Reporter', 'Hidden Darkness', 'Malcolm Bond', 'Killer Instinct', 'Career Focus', 'Family Loyalty'],
-            'JT Tarmel': ['Prodigal Detective', 'Family Man', 'Team Muscle', 'Loyal Friend', 'Street Smart', 'Bronx Native', 'Partner Dani'],
-            'Edrisa Tanaka': ['Prodigal ME', 'Malcolm Crush', 'Quirky Genius', 'Body Expert', 'Comic Relief', 'Social Awkward', 'Smart Woman'],
+            'Malcolm Bright': ['Prodigal Son Character', 'Main Character', 'NYPD Consultant', 'Profiler', 'Night Terrors', 'Hand Tremor'],
+            'Martin Whitly': ['Prodigal Son Character', 'Main Character', 'Serial Killer', 'The Surgeon', '23 Victims', 'Psychiatric Hospital'],
+            'Gil Arroyo': ['Prodigal Son Character', 'Main Character', 'NYPD Lieutenant', 'Team Leader', 'Married', 'Prostate Cancer'],
+            'Dani Powell': ['Prodigal Son Character', 'Main Character', 'NYPD Detective', 'Drug Past', 'Undercover Experience'],
+            'Jessica Whitly': ['Prodigal Son Character', 'Main Character', 'Socialite', 'Alcoholic'],
+            'Ainsley Whitly': ['Prodigal Son Character', 'Main Character', 'TV Reporter', 'Kills Endicott'],
             
             // The Recruit Characters
-            'Owen Hendricks': ['Recruit CIA Lawyer', 'Rookie Mistakes', 'Georgetown Law', 'Phoenix Born', 'Max Asset', 'Roommate Death', 'Over Head', 'Quick Learner'],
-            'Max Meladze': ['Recruit Asset', 'Belarus Ops', 'Lawyer Cover', 'Grey Mail', 'Daughter Secret', 'Mystery Past', 'Dangerous Woman', 'Owen Handler'],
-            'Hannah Copeland': ['Recruit CIA', 'Owen Partner', 'Divorced Recent', 'Field Expert', 'Mentor Role', 'Coffee Addict', 'Tough Love', 'Experience Voice'],
-            'Violet Ebner': ['Recruit Counsel', 'Power Player', 'Intimidating', 'Legal Expert', 'Bureau Master', 'Cold Exterior', 'Smart Leader'],
-            'Dawn Lin': ['Recruit Operations', 'Rising Star', 'Ambitious', 'Yale Grad', 'Competitive', 'Young Gun', 'Overachiever'],
-            'Nyland': ['Recruit CIA Boss', 'Team Leader', 'By the Book', 'Pressure Point', 'Decision Maker', 'Authority Figure']
+            'Owen Hendricks': ['The Recruit Character', 'Main Character', 'CIA Lawyer', 'Georgetown Law', 'Dragged Into Field Work'],
+            'Max Meladze': ['The Recruit Character', 'Main Character', 'Former Asset', 'Criminal', 'Grey Mail Threat', 'Has Children'],
+            'Hannah Copeland': ['The Recruit Character', 'Main Character', 'CIA Case Officer', 'CIA Agent', 'Field Expert', 'Divorced']
         }
     },
 
     gameCategories: {
         cricket: [
-            // All unique attributes from playerMatches cricket
+            // Nationalities & Background
             'Indian Player', 'Australian Player', 'English Player', 'Pakistani Player', 'South African Player',
             'West Indies Player', 'New Zealand Player', 'Sri Lankan Player', 'Bangladeshi Player', 'Afghan Player',
             'West Indies Legend', 'Australian Legend', 'Pakistani Legend', 'South African Legend', 'Sri Lankan Legend',
             'Indian Women Player', 'Australian Women Player', 'Indian Women Legend',
             
-            // Batting Styles & Achievements
-            'Right-Handed Batsman', 'Left-Handed Batsman', 'Left-Handed Opener', 'Switch Hit Master',
-            'Cover Drive Specialist', 'Pull Shot Master', 'Reverse Sweep Master', 'Helicopter Shot Creator',
-            'Classical Technique', 'Unorthodox Shots', 'Mr. 360 Degrees', 'Power Hitter', 'Aggressive Batsman',
-            'Finisher Specialist', 'Chase Master', 'Classical Test Batsman', 'White-Ball Specialist',
+            // Batting Styles & Positions
+            'Right-Handed Batsman', 'Left-Handed Batsman', 'Left-Handed Opener',
+            'Wicket-Keeper Batsman',
+            
+            // Batting Techniques
+            'Cover Drive Specialist', 'Pull Shot Specialist', 'Reverse Sweep Specialist', 'Helicopter Shot Creator',
+            'Mr. 360 Degrees', 'Yorker Specialist',
             
             // Batting Records
             'First to 100 International Centuries', 'Only Player with 3 ODI Double Centuries', 
             'Highest Individual ODI Score (264)', 'First ODI Double Century Scorer', 'Most Runs in International Cricket',
-            'Scored 13000+ ODI Runs', 'Fastest to 1000 ODI Runs', 'Most International Centuries While Chasing',
-            'Most International Sixes', 'Triple Century Scorer', 'Highest Test Score 400*', 'Batting Average 99.94',
-            'Most Double Centuries', '5000 Runs vs Single Team', 'Youngest ODI Double Centurion',
-            'Fastest Century in All Formats', 'First Century in WC Final', 'Most ODI Runs Women',
-            '10000 Runs and 250 Wickets', 'Four Consecutive ODI Centuries', 'First T20I Century',
-            'Most T20I Runs Calendar Year', 'Fastest to 5000 T20I Runs', '171* vs Australia',
+            'Scored 13000+ ODI Runs', 'Most International Centuries While Chasing',
+            'Triple Century Scorer', 'Highest Test Score 400*', 'Batting Average 99.94',
+            'Most Double Centuries', 'Youngest Indian ODI Double Centurion', 'Batting Average Above 60',
+            'First Indian T20I Century', 'Most T20 Sixes', 'Most T20 Centuries',
+            'Fastest ODI 50, 100, 150', 'Four Consecutive ODI Centuries', 'Most Test Runs for England',
+            '201* While Chasing', '171* vs Australia', '2023 World Cup Final Hero',
+            'Most ODI Runs Women', 'Fastest Indian T20I Century', 'First Class 501*',
             
-            // Bowling Styles & Achievements
-            'Fast Bowler', 'Left-Arm Fast', 'Off-Spinner', 'Left-Arm Spinner', 'Leg-Spinner',
-            'Yorker Specialist', 'Death Bowling Specialist', 'Swing Bowling Master', 'Reverse Swing Master',
-            'Pink Ball Specialist', 'New Ball Specialist', 'Googly Specialist', 'Doosra Inventor',
-            'Carrom Ball Expert', 'Unique Bowling Action', 'Quick Action', 'Express Pace',
+            // Bowling Types
+            'Fast Bowler', 'Left-Arm Fast Bowler', 'Off-Spinner', 'Left-Arm Spinner', 'Leg-Spinner',
+            'Express Pace', 'Googly Specialist', 'Carrom Ball Specialist',
             
             // Bowling Records
             'Fastest Ball Ever (161.3 kmph)', 'Most Test Wickets', 'Most ODI Wickets Women',
-            'Most Wickets in Single World Cup', 'Best Bowling Figures in ODI', 'Most 5-Wicket Hauls in Tests',
-            'Fastest to 100 ODI Wickets', 'Fastest to 200 Test Wickets', 'Most Wickets in WTC',
-            '700+ Test Wickets', 'Hat-trick Youngest', 'Youngest 5-Wicket Haul', 'Most T20I Wickets',
+            'Most Wickets in 2023 World Cup', 'Most 5-Wicket Hauls for India', 'Most T20I Wickets for India',
+            'Fastest Indian to 100 ODI Wickets', 'Fastest to 200 Test Wickets', 'Most Wickets in WTC',
+            '700+ Test Wickets', 'Youngest to Take Hat-trick', 'Ball of the Century',
             
             // All-Round & Fielding
-            'All-Rounder', 'Fast-Bowling All-Rounder', 'Wicket-Keeper Batsman', 'Wicket-Keeper Captain',
-            'Greatest All-Rounder', 'All-Rounder Supreme', 'Triple Threat All-Rounder',
-            'Most Stumpings in Career', 'Direct Hit Specialist', 'Superman Fielder', 'Slip Catching Expert',
+            'All-Rounder', 'Fast-Bowling All-Rounder', 'Most Stumpings in Career',
+            '10000 Runs and 250 Wickets',
             
-            // Team Affiliations
-            'CSK Captain', 'CSK Player', 'MI Captain 5 IPL Titles', 'MI Player', 'RCB Player Never Won', 
-            'RCB Icon', 'RCB WPL', 'KKR Player', 'KKR Bowling Coach', 'GT Captain First Season Win', 
-            'GT Player', 'DC Captain', 'DC WPL Captain', 'SRH Player', 'PBKS Legend', 'PBKS Player', 
-            'RR Captain', 'RR Player', 'RR Captain IPL Winner', 'LSG Player', 'UP WPL',
+            // Current Teams
+            'Current CSK Player', 'Current MI Player', 'Current MI Captain', 'Current RCB Player', 
+            'Current KKR Player', 'Current GT Player', 'Current GT Captain', 'Current DC Captain', 
+            'Current SRH Player', 'Current SRH Captain', 'Current PBKS Player', 'Current RR Player', 
+            'Current RR Captain', 'Current LSG Player', 'Current LSG Captain',
+            'Current MI WPL Captain', 'Current RCB WPL Vice-Captain', 'Current DC WPL Captain', 
+            'Current UP WPL Captain',
             
-            // Career Milestones & Status
-            'Current Test Captain', 'Former Captain', 'Test Captain 2014-2022', 'Youngest Captain',
-            'Retired Legend', 'Retired Early', 'Retired 2022', 'Retired Young', '200 Test Matches Played',
-            'Played 6 World Cups', '500 International Matches', 'Longest Career', 'Late International Debut',
+            // Former Teams
+            'Former CSK Captain', 'Former CSK Player', 'Former MI Player', 'Former RCB Player', 
+            'Former KKR Player', 'Former GT Captain', 'Former DC Captain', 'Former SRH Captain', 
+            'Former SRH Player', 'Former PBKS Player', 'Former PBKS Captain', 'Former RR Captain',
+            'Former RR Player', 'Former SRH Bowling Coach', 'Former Indian Vice-Captain',
+            
+            // IPL Achievements
+            'RCB Player Never Won IPL', 'GT Captain First Season Win', 'Orange Cap Winner',
+            'Most Expensive IPL Buy 2023', 'Most Expensive IPL Buy 2024', 'RR Captain IPL Winner',
+            
+            // International Captaincy
+            'Current Test Captain', 'Current ODI Captain', 'Current T20I Captain',
+            'Former Test Captain', 'Former ODI Captain', 'Former T20I Captain',
+            'Former Australian Captain', 'Youngest Captain', 'Current Test Vice-Captain',
+            'Current Australian Captain',
+            
+            // Career Milestones
+            'Retired Legend', 'Retired Early', 'Retired in 2022', 'Retired from Tests',
+            '200 Test Matches Played', '100 Test Matches', 'Played 6 World Cups',
+            'Died in 2022', 'Late International Debut', 'Dual International', 'Mental Health Break',
             
             // World Cup & Championships
-            '2011 World Cup Winning Captain', '2007 T20 WC Winner', '2019 WC Player of Tournament',
-            'Won 3 World Cup Formats', 'Champions Trophy Hero', 'WTC Final Hero', 'IPL Winner',
-            'Orange Cap Winner', 'Purple Cap Winner', 'Under-19 World Cup Winner',
+            '2011 World Cup Winning Captain', '2007 T20 WC Winner', '2019 World Cup Player of Tournament',
+            'Champions Trophy Hero', 'WTC Final Winner', 'WTC Final Hero', 'Under-19 World Cup Winner',
+            '2019 World Cup Hero', 'Headingley Hero', '2022 T20 World Cup Player of Tournament',
             
-            // Special Attributes & Nicknames
-            'Hitman Nickname', 'Little Master', 'The Don', 'Sir Jadeja Nickname', 'Big Show Nickname',
+            // Nicknames
+            'Hitman Nickname', 'The Don', 'Sir Jadeja Nickname', 'Big Show Nickname',
             'Universe Boss', 'Master Blaster', 'Sultan of Swing', 'Rawalpindi Express', 'Boom Boom',
-            'King of Clay', 'Prince of Trinidad', 'Chakdaha Express', 'Mr. Nice Guy',
+            'Prince of Trinidad', 'Chakdaha Express',
             
-            // Unique Achievements & Facts
-            'First Player Dismissed by Third Umpire', 'No ODI Century Outside Asia', 'Six Off First Ball Test',
-            'Mankading Incident', 'Sandpaper Scandal', 'Knee Controversy', 'Age Controversy',
-            'Fastest ODI Century Record', 'Most Expensive IPL Buy', 'Most Expensive IPL Buy 2024',
+            // Unique Facts
+            'Sandpaper Scandal', 'Age Controversy', 'Fastest ODI Century Record', 'Mankading Incident',
+            'Never Wore Helmet', 'Stadium Named After', 'Invincibles Captain',
+            'Bodyline Target', 'MCC President', 'Multiple Suspensions', 'Doosra Pioneer',
+            'Bowling Action Controversy', 'Curran Brothers',
             
-            // Personal & Off-Field
+            // Professional Background
             'Lieutenant Colonel in Army', 'Engineer Turned Cricketer', 'YouTube Cricket Analyst',
-            'Fitness Icon', 'TikTok Videos', 'Mental Health Advocate', 'Political Figure',
-            'Commentary Career', 'Biopic Made', 'Model Career', 'Dual International',
-            'Car Accident Survivor', 'Comeback from Surgery', 'Comeback from Injury',
-            'Played from ICU', 'Religious Celebrations', 'Sword Celebration', 'Vegan Lifestyle',
-            'Chess Player', 'Married to Cricketer', 'Son-in-Law of Afridi', 'Diabetes Survivor',
-            'Mother Passed Away', 'Navy Background', 'Tape Ball Background', 'BBL Discovery',
-            'Street-Smart Cricketer', 'Classical Batter', 'Stylish Player', 'Youth Icon',
-            'Vice-Captain', 'Most Successful Captain', 'Mental Health Break', 'Passed Away 2022',
+            'Commentary Career', 'KKR Bowling Coach', 'Political Figure', 'New Zealand Born',
+            'YouTube Channel', 'TikTok Videos', 'Biopic Made',
             
-            // Historical Achievements
-            'Invincibles Captain', 'Bodyline Target', 'Greatest Batsman', 'Ball of the Century',
-            'First Class 501*', 'Most Successful Bangladeshi', 'MCC President', 'Tamil Background',
-            'Bowling Action Controversy', 'Multiple Suspensions', 'Personal Life Controversies',
-            'Bristol Incident', 'Playboy Lifestyle', 'Stadium Named After', 'Never Wore Helmet'
+            // Personal Life
+            'Car Accident Survivor', 'Comeback from Surgery', 'Comeback from Injury',
+            'Played from ICU', 'Sword Celebration', 'Chess Player', 'Married to Cricketer',
+            'Son-in-Law of Afridi', 'Diabetes Survivor', 'Mother Passed Away', 'Navy Background',
+            'Tape Ball Background', 'BBL Discovery', 'Tamil Background',
+            'Played Football and Cricket', 'Married to Starc', 'Married', 'Has Children',
+            'Married to Actress', 'Married to Presenter', 'Mental Health Advocate',
+            'Greek Heritage', 'Bristol Incident', 'Married Twice'
         ],
         
         tennis: [
-            // All unique player attributes from tennis
+            // Nationalities
             'Serbian Player', 'Spanish Player', 'Swiss Player', 'Swiss Legend', 'Russian Player',
             'Greek Player', 'German Player', 'Norwegian Player', 'Italian Player', 'Austrian Player',
             'Croatian Player', 'Argentine Player', 'Polish Player', 'Belarusian Player', 'American Player',
             'American Legend', 'British Player', 'French Player', 'Canadian Player', 'Danish Player',
             'Kazakhstani Player', 'Tunisian Player', 'Czech Player', 'German Legend', 'Czech-American Legend',
-            'Australian Legend', 'Yugoslav-American', 'Romanian Player', 'Chinese Legend', 'American Doubles',
+            'Australian Legend', 'Yugoslav-American Legend', 'Romanian Player', 'Chinese Legend', 
+            'American Doubles Legend', 'Russian Legend',
             
             // Grand Slam Achievements
-            '24 Grand Slams Record', '23 Grand Slams', '14 French Open Titles', '8 Wimbledon Titles',
-            '9 Wimbledon Titles', '7 Grand Slams', '5 Grand Slams', '4 French Opens', '2 Grand Slams',
-            '2x Wimbledon Champion', 'Multiple Slam Finals', 'Never Won Slam', 'Golden Slam Winner',
-            'Calendar Grand Slam', 'Career Golden Masters', 'Double Career Slam', 'First Asian Slam',
-            'Slam Record Holder', 'Pregnant Slam Win', 'Wimbledon Champion', 'US Open Champion',
-            'Australian Open Champion', 'French Open Champion', 'Olympic Gold Medalist',
+            '24 Grand Slams Record', '23 Grand Slams', '22 Grand Slams', '20 Grand Slams', 
+            '14 French Open Titles', '8 Wimbledon Titles', '9 Wimbledon Titles', '7 Grand Slams', 
+            '5 Grand Slams', '4 French Open Titles', '3 Grand Slams', '2 Grand Slams', 
+            '2x Wimbledon Champion', '9 Grand Slams', '18 Grand Slams', 'Multiple Grand Slams',
+            'Grand Slam Winner', 'Multiple Slam Finals', 'Multiple Slam Quarters', 'Never Won Slam',
+            'Golden Slam Winner', 'Calendar Grand Slam', 'Career Grand Slam', 'Career Golden Masters',
+            'Double Career Slam', 'First Asian Slam Winner', 'Pregnant Slam Win', 'Wimbledon Champion',
+            'US Open Champion', 'Australian Open Champion', 'French Open Champion',
+            'Olympic Gold Medalist', 'Wimbledon Finalist', 'Most Grand Slams Men',
+            'Most Grand Slams Open Era',
             
-            // Playing Styles & Techniques
-            'One-Handed Backhand', 'Left-Handed', 'Left-Handed Natural Righty', 'All-Surface Master',
-            'Clay Court Specialist', 'Grass Court Specialist', 'Hard Court Specialist', 'Baseline Grinder',
-            'Serve and Volley', 'Return Expert', 'Drop Shot Artist', 'Power Game', 'Counter Puncher',
-            'Aggressive Baseline', 'Flat Baseline Game', 'Big Server', 'Fastest Serve Over 130 mph',
-            'Fastest Serve US Woman', 'Forehand Slice', 'Speed Player', 'Most Athletic Ever',
-            'Tweener Master', 'Underarm Server', 'Sliding Master', 'Power Server', 'Tactical Genius',
-            'Unusual Technique', 'Two-Handed Both Sides', 'Mirror Twins',
+            // Playing Styles
+            'Right-Handed', 'Left-Handed', 'One-Handed Backhand', 'Left-Handed Natural Righty',
+            'Clay Court Specialist', 'Two-Handed Both Sides', 'Underarm Server',
             
             // Rankings & Records
-            'Youngest Ever No. 1', 'Most Weeks at No. 1', '377 Weeks No. 1', '400+ Weeks No. 1',
-            'Longest No. 1 Streak', 'WTA No. 1', 'Former No. 1', 'Most Weeks No. 1 Doubles',
-            'Fastest to 10 Titles', 'Most Prize Money', 'Most Career Aces', 'Most Doubles Titles',
-            'Longest Match Player (11hrs)', 'Ace Record Match', 'No Podium Record', 'Never Broke Serve Match',
-            'Beat Venus at 15', 'Clay Court Win Streak 50+', 'Never Retired Mid-Match',
+            'Youngest Ever No. 1', 'Most Weeks at No. 1', '377 Weeks No. 1', 'Longest No. 1 Streak',
+            'Current No. 1', 'Current No. 2', 'Former No. 1', 'Former No. 2', 'Former No. 3',
+            'Most Weeks at No. 1 Active', 'Most Grand Slam Doubles', 'Most Doubles Titles',
+            'Top 10 Player', 'Longest Match Player', 'Beat Venus at 15', 'Never Retired Mid-Match',
+            'Never Won WTA 1000', 'Never Won Masters', 'Paris Master Winner', 'Masters Champion',
+            'Multiple Masters Titles', 'Multiple Masters Finals', 'ATP Finals Winner',
+            'Monte Carlo Master', 'Indian Wells Winner', 'Masters 1000 Struggles',
+            'Former No. 1 Doubles', 'Grand Slam Doubles Champion', 'Stanford Graduate',
+            'Most Prize Money',
             
-            // Personal Traits & Life
-            'Gluten-Free Advocate', 'Meditation Practice', 'OCD Court Rituals',
-            'Never Smashed Racquet', 'Vamos Celebration', 'Chest Thump Celebration', 'BWEH Scream',
-            'Video Game Celebration', 'Philosophy Tweets', 'YouTube Vlogger', 'TikTok Generation',
-            'Fashion Designer', 'Fashion Icon', 'Model Career', 'Candy Business', 'Skincare Line',
-            'Coffee Business', 'Environmental Activist', 'Social Activist', 'Feminist Quotes',
-            'Gay Rights Pioneer', 'Mental Health Voice', 'BLM Speech', 'Political Activist',
+            // Personal Facts
+            'Gluten-Free Diet', 'Never Smashed Racquet', 'YouTube Vlogger', 'Fashion Designer',
+            'Candy Business', 'Skincare Line', 'Social Activist', 'LGBTQ Pioneer',
+            'Mental Health Advocate', 'Psychologist on Tour', 'Bweh Celebration', 'Real Madrid Fan',
+            'Chess Player', 'Golf Enthusiast', 'Basketball Fan', 'EleVen Brand',
+            'Commentary Career', 'Octopus Nickname', 'La Monf Showman', 'King of Clay',
+            'Minister of Happiness', 'Bagel Specialist', 'The Professor',
             
-            // Relationships & Background
+            // Relationships & Coaching
             'Uncle Toni Coached', 'Coached by Ferrero', 'Coached by Parent', 'Coached by Cahill',
-            'First Female Coach', 'Multiple Coaches', 'Never Had Coach', 'Twin Sets of Twins',
-            'Twin Partner Mike', 'Twin Partner Bob', 'Married Agassi', 'Dating Svitolina',
-            'Sister Rivalry', 'Married to Starc', 'Billionaire Parents', 'Son of F1 Driver',
-            'Changed Nationality', 'Born in Russia', 'Scottish Identity', 'Arab Trailblazer',
+            'Twin Sets of Twins', 'Twin Partner Mike', 'Twin Partner Bob', 'Married Agassi',
+            'Sister Rivalry', 'Married Svitolina', 'Billionaire Parents', 'Son of Tennis Players',
+            'Changed Nationality', 'Born in Russia', 'Arab Trailblazer', 'Mother on Tour',
+            'Multiple Coaches', 'Married', 'Has Children',
             
-            // Unique Achievements & Moments
-            'Injury Comebacks', 'Hip Replacement Player', 'Knife Attack Survivor', 'Stabbing Victim',
-            'Doping Ban', 'Doping Suspension', 'Breast Reduction', 'Childbirth Complications',
-            'Ended 77-Year Drought', 'Tallest Ever 6 foot 11', 'Tallest Slam Winner', 'Shortest on Grid',
-            'Dr. Ivo', 'Stanford Grad', 'Chess Player', 'Real Madrid Fan', 'Golf Enthusiast',
-            'Basketball Fan', 'Twitch Streamer', 'Led Zeppelin Fan', 'New Balance Deal',
-            
-            // Playing Characteristics
-            'Next Gen Leader', 'Late Bloomer', 'Young Gun', 'Veteran Player', 'Future No. 1',
-            'Showman Entertainer', 'Crowd Pleaser', 'Crowd Antagonist', 'Crowd Favorite',
-            'Entertainment First', 'Quiet Champion', 'Quiet Personality', 'Ice Queen Demeanor',
-            'Gentle Giant', 'Hot Head', 'Emotional Player', 'Calm Demeanor', 'Dry Humor',
-            
-            // Career Milestones
-            'Retired Young', 'Injury Retirement', 'Comeback Attempts', 'Calendar Slam', 'Teen Domination',
-            'Finals Curse Broken', 'Quarter-Final Specialist', 'Doubles Specialist', 'Singles Focus',
-            'Coach Career', 'Commentary Career', 'Switched Hands Play', 'College Star',
-            
-            // Nicknames & Monikers
-            'Octopus Nickname', 'La Monf Showman', 'Stanimal Mode', 'Tank Master', 'Il Predestinato',
-            'King of Clay', 'Minister of Happiness', 'Ice Queen', 'Tiger Tattoo', 'Carrot Top Hair',
-            'Mother on Tour', 'Tattoo Quote', 'Tattoo Rose', 'Beard Icon', 'Tank Top Style',
-            
-            // Specific Achievements
-            'Bagel Specialist', 'Drop Shot Queen', 'Ace Record', 'Oldest Winner', 'Youngest Titlist',
-            'Most Athletic Ever', 'Parkour Videos', 'Mullet Era', 'Nude Calendar',
-            'Met Gala Regular', 'Wimbledon Finalist', 'Masters Winner', 'ATP Finals Winner',
-            'Monte Carlo Master', 'Indian Wells Winner', 'Miami Winner', 'Career Prize Money Leader'
+            // Medical & Career Events
+            'Hip Replacement Player', 'Knife Attack Survivor', 'Stabbing Victim', 'Meldonium Ban',
+            'Doping Suspension', 'Doping Case', 'Sjögren\'s Syndrome', 'Ended 77-Year Drought',
+            'Domestic Violence Case', 'Assault Charges', 'Ankle Injury 2022', 'Wrist Injury',
+            'Still Active', 'Retired in 2020', 'Retired in 2022', 'Retired in 2023',
+            'Retired in 2014', 'Davis Cup Hero', 'Tiger Tattoo', 'Tattoo Quote', 'Tattoo Rose',
+            'New Balance Deal', 'Met Gala Regular'
         ],
         
         f1: [
-            // All unique player attributes from f1
+            // Nationalities
             'Dutch Driver', 'British Driver', 'Monégasque Driver', 'Spanish Driver', 'Mexican Driver',
             'Australian Driver', 'French Driver', 'Finnish Driver', 'German Driver', 'Chinese Driver',
             'Thai-British Driver', 'American Driver', 'Danish Driver', 'Japanese Driver', 'Canadian Driver',
             'German Legend', 'Brazilian Legend', 'French Legend', 'Austrian Legend', 'Argentine Legend',
-            'Scottish Legend', 'British Legend', 'British Champion', 'Finnish Champion', 'Finnish 2x Champion',
-            'German 4x Champion', 'Polish Driver', 'Swedish Driver', 'Venezuelan Driver', 'Russian Driver',
+            'Scottish Legend', 'British Legend', 'Finnish Legend', 'Retired Driver', 'Current Driver',
             
-            // Teams
+            // Current Teams (2024)
             'Red Bull Racing', 'Mercedes AMG', 'Scuderia Ferrari', 'McLaren F1', 'Alpine F1',
             'Aston Martin', 'RB Team', 'Stake F1 Sauber', 'Williams Racing', 'Haas F1',
-            'Ferrari God', 'McLaren Icon', 'McLaren Hero', 'Lotus Driver', 'Brabham Hero',
-            'Benetton Hero', 'Brawn Miracle', 'Mercedes Boss', 'Ferrari Champion', 'Red Bull Era',
-            'Red Bull PTSD', 'AlphaTauri Hero', 'Mercedes Hero', 'Ferrari Hero', 'Lotus Hero',
             
             // Championships & Wins
-            '4x World Champion', '7x World Champion', '3x World Champion', '2x World Champion',
-            'World Champion', '91 Race Wins', '51 Wins', 'Most Wins Ever (105)', '19 Wins in 2023',
-            '10 Consecutive Wins', 'Youngest Race Winner', 'Oldest Champion', 'Youngest Champion',
-            'Spain Winner', 'Canada Winner', 'Monaco Winner', 'Hungary Winner', 'Monza Winner',
-            'Singapore Master', 'Miami 2024 First Win', 'Only Non-RB Win 2023', 'One Hit Wonder',
+            '3x World Champion', '4x World Champion', '7x World Champion', '2x World Champion',
+            '1992 World Champion', '1996 World Champion', '2007 World Champion', '2009 World Champion',
+            'Joint Most Championships', '91 Race Wins', '51 Race Wins', '41 Race Wins', '32 Race Wins',
+            '10 Race Wins', '8 Race Wins', 'Most Wins Ever', '19 Wins in 2023', '10 Consecutive Wins',
+            'Youngest Race Winner', 'Oldest Champion', 'Youngest Champion', 'Canada 2008 Winner',
+            'Monza Winner', 'Hungary Winner', 'First Win Miami 2024', 'Indy 500 Winner',
+            'Triple Crown Attempt',
             
-            // Qualifying & Racing Skills
-            'Most Pole Positions (104)', 'Youngest Ferrari Pole', 'Qualifying Master', 'Mr. Saturday',
-            'Pole as Rookie', 'Aggressive Overtaker', 'Late Braker', 'Door Banger', 'Minister of Defense',
-            'Tyre Whisperer', 'Rain Master', 'Rain God', 'Street Circuit King', 'Master of Starts',
-            'Smooth Driver', 'Smooth Operator', 'Calculated Racer', 'Natural Talent', 'Smooth Style',
+            // Records & Achievements
+            'Most Pole Positions', 'Most Podiums Ever', 'Youngest Ferrari Pole', 'Most Races Started',
+            'Most Races Without Podium', 'No Podium Record', 'Youngest Rookie Podium',
+            'Pole Position Turkey', 'Best Win Percentage', 'First American Since 2015',
+            'First Chinese F1 Driver', 'Le Mans Winner', 'F2 Champion', 'F3 Champion',
+            'Sprint Winner', 'Most Fastest Laps', 'IndyCar Champion', 'Brawn GP Champion',
+            '1950s Era', 'Alpine Academy', 'McLaren Academy', 'Ferrari Academy',
+            'Red Bull Junior', 'Mercedes Junior', 'Williams Academy', 'Alfa Romeo Academy',
             
-            // Personal Life & Character
-            'Son of F1 Driver', 'Rally Legend Son', 'Graham Son', 'Gilles Son', 'Michael Son',
-            'Max Girlfriend Dad', 'Billionaire Dad', 'F1 Dad', 'Oligarch Father', 'Lost Father Early',
-            'Lost Best Friend', 'Married to Starc', 'Carmen Montero GF', 'Lily Girlfriend', 'Dating Drama',
-            'Vegan Lifestyle', 'Fashion Icon', 'Fashion Week Regular', 'Jewelry Controversy', 'Dog Roscoe',
-            'Orange Army Fans', 'Mexican Hero', 'Brazil Hero', 'Only Black Driver', 'First Chinese F1',
-            'Only American', 'Tallest on Grid', 'Shortest on Grid', 'Tallest Ever', 'Gentle Giant',
+            // Personal Facts
+            'Son of F1 Driver', 'Rally Legend Son', 'Michael\'s Son', 'Graham Hill\'s Son',
+            'Billionaire Dad Owns Team', 'Lost Godfather', 'Lost Father', 'Only Black Driver',
+            'Only American on Grid', 'Oldest on Grid', 'Shortest on Grid', 'Lives in Italy',
+            'Monaco Resident', 'Madrid Native', 'Vegan', 'Knighted by Queen', 'Piano Player',
+            'Golf Enthusiast', 'Married', 'Has Children', 'Sim Racing Expert', 'Twitch Streamer',
+            'Quadrant CEO', 'Kimoa Brand', 'Coffee Business', 'Environmental Activist',
+            'PowerPoint Presentations', 'GPDA Director', 'Webber Managed', 'Honda Protégé',
+            'Sky Sports Pundit', 'TV Commentator', 'Phoenix Tattoo', '1976 Comeback',
             
-            // Nicknames & Personality
-            'Honey Badger', 'Iceman', 'The Professor', 'El Maestro', 'Flying Scot', 'Flying Finn',
-            'Il Leone', 'Minister of Defense', 'Smooth Operator', 'Il Predestinato', 'Chili Nickname',
-            'Viking Nickname', 'Hulkenback', 'Big Smile', 'Poker Faced', 'Quiet Guy', 'Nice Guy',
-            'PowerPoint King', 'Magic Alonso', 'Liked by Gasly', 'Crashtor', 'MazeSpin', 'Florida Man',
+            // Nicknames
+            'Honey Badger', 'The Iceman', 'The Professor', 'El Maestro', 'The Flying Scot',
+            'The Flying Finn', 'Mustache Icon', 'Shoey Inventor', 'Red Cap Icon',
             
-            // Controversies & Incidents
-            'Contract Drama', 'Sandpaper Scandal', 'Alpine Drama', 'Netflix Star',
-            'Netflix Villain', 'Netflix Focus', 'Groping Video', 'Ukraine War Exit', 'Abu Dhabi 2021',
-            'Suck My Balls Quote', 'Leave Me Alone', 'To Whom It May Concern', 'Shoey Creator',
-            'Most Penalty Points', 'Bad Luck', 'Injury Prone', 'Bike Accidents', 'Under Pressure',
+            // Career Events
+            'Moving to Ferrari 2025', 'Moving to Williams 2025', 'Moving to Sauber 2025',
+            'Alpine Contract Drama', 'Red Bull Domination', 'Mercedes Non-Executive Chairman',
             
-            // Technical & Racing
-            'Sim Racing Expert', 'Gaming Addiction', 'Twitch Streamer', 'Esports Champion', 'Poker Player',
-            'Triple Crown Attempt', 'IndyCar Champion', 'Indy 500 Winner', 'WEC Move', 'Rally Skills',
-            'Rally Champion', 'Rally Crash', 'One-Handed Return', 'Comeback King', 'Comeback Story',
-            'Redemption Story', 'Phoenix Metaphor', 'Fire Survivor', '1976 Comeback', 'Comeback Attempts',
+            // Accidents & Safety
+            'Skiing Accident', 'Died at Imola 1994', 'Died at Hockenheim 1968',
+            'Nürburgring Fire Survivor', 'Bahrain Fire Survivor', 'Rally Accident Survivor',
+            'Silverstone Crash Survivor', 'Died in 2019', 'Retired in 2021', 'Retired in 2022',
+            'Safety Pioneer', 'Dyslexia Advocate',
             
-            // Unique Achievements
-            'Knighted by Queen', 'Moving to Ferrari 2025', 'Moving to Williams', 'Rated #1 by Teams',
-            'GPDA Director', 'Quadrant CEO', 'Kimoa Brand', 'Coffee Business', 'Airline Owner',
-            'Cookbook Author', 'Piano Player', 'Cycling Fanatic', 'Golf Addict', 'Fishing Love',
-            'Basketball Fan', 'Cricket Fan', 'Chess Player', 'Mental Health Voice', 'Eco Warrior',
-            'Bee Hotels', 'Inspector Seb', 'Fitness Pioneer', 'Safety Pioneer', 'Dyslexia Advocate',
-            
-            // Career Status
-            'Current Driver', 'Retired Driver', 'Retired Young', 'Retired Legend', 'Reserve Hero',
-            'Test Driver', 'Mercedes Junior', 'Honda Hope', 'Ferrari Fail', 'Williams Years',
-            'Haas Years', 'Haas Disaster', 'Long Beach Move', 'American Success', 'European Struggles',
-            'Poverty Background', 'Skiing Accident', 'Private Now', 'Died at Imola', 'Died Young',
-            
-            // Records & Milestones
-            'Win Percentage Record', 'No Podium Record', 'Most Experienced', 'Rookie of Year',
-            'F2 Champion First Try', 'Youngest Italian Winner', 'Oldest Winner', 'Pole Position Record',
-            'Le Mans Winner', 'Most Fastest Laps', 'Fastest Ferrari Pole', 'Most Crashes',
-            'Shortest Career', 'First US Since 2015', 'Monaco Curse', 'Singapore Specialist',
-            'Silverstone Crash', 'Bahrain Fire Survivor', 'Adelaide Crash', 'Appendix 2022',
-            'Broken Hand', 'Ankle Injury 2022', 'No Win Until Miami 2024', 'Sprint Winner',
-            
-            // Team Dynamics
-            'Best Friends with Max', 'Charles BFF', 'Max Enemy', 'Senna Rival', 'Prost Rivalry',
-            'Schumacher Rival', 'James Hunt Rival', 'Team Orders Victim', 'Webber Managed',
-            'Saved Force India', 'Alpine Hero', 'Mercedes Hero', 'Ferrari Hero', 'Lotus Hero',
-            'Pay Driver Debate', 'Pay Driver Past', 'PDVSA Money', 'Sponsors Galore',
-            
-            // Off-Track
-            'TV Career', 'Sky Pundit', 'BBC Voice', 'Commentary Career', 'Musician Now', 'Musician Too',
-            'Triathlete', 'Japan Love', 'Italy Resident', 'Monaco Resident', 'Madrid Native',
-            'Perth Born', 'Norfolk Born', 'Rouen Native', 'Speaks 3 Languages', 'Sheffield United Fan',
-            'Real Madrid Fan', 'Mullet Era', 'Mustache Icon', 'Red Cap Icon', 'Tartan Cap',
-            'Shirtless Memes', 'Helmet Designer', 'Cat Dad', 'Pets Everywhere', 'Playboy Era',
-            'Playboy Image', 'Party Era', 'Drinking Stories', 'Wine Lover', 'Vegan', 'Religious Man',
-            'Political Comments', 'Outspoken Views', 'Brutal Honesty', 'One-Liner King', 'Dry Humor',
-            'Comedy King', 'Quiet Champion', 'Gentleman Racer', 'Humble Champion', 'People Champion',
-            'National Hero', 'Knighted', 'Political Master', 'Mind Games Expert', 'Dirty Tricks',
-            'Fair Leader', 'Kidnapped Story', 'Tax Scandal', 'Death Threats', 'Sabbatical Forever'
+            // Team History
+            'Former Red Bull Driver', 'Former Mercedes Driver', 'Former Williams Driver',
+            'Former Haas Driver', 'Former AlphaTauri Driver', 'Former Ferrari Driver',
+            'Former McLaren Driver', 'Former Renault Driver', 'Former Alpine Driver',
+            'Former Toro Rosso Driver', 'Former Racing Point Driver', 'Former Force India Driver',
+            'Former Manor Driver', 'Former Benetton Driver', 'Former Brabham Driver',
+            'Former BAR Driver', 'Former BMW Driver', 'Former Jordan Driver',
+            'Former Alfa Romeo Driver', 'Former Lotus Driver', 'Ferrari Legend',
+            'McLaren Legend', 'Lotus Legend', 'Monaco Curse', 'Monaco Master',
+            'Mercedes Reserve', 'Red Bull Reserve', 'Alpine WEC Driver', 'IndyCar Driver'
         ],
         
         tv: [
-            // All unique character attributes from tv shows
+            // Show Affiliations
+            'Castle Character', 'Mentalist Character', 'Blacklist Character', 'SWAT Character',
+            'White Collar Character', 'Prodigal Son Character', 'The Recruit Character',
             
-            // Castle Attributes
-            'Castle Writer', 'Castle Detective', 'Castle Daughter', 'Castle Mother', 'Castle ME',
-            'Castle Captain S1-3', 'Castle Captain S4-7', 'Castle Recurring', 'Castle S8 Regular',
-            'Castle Family Member', 'Castle Team', 'Becketts Team', '12th Precinct',
+            // Roles & Professions
+            'Main Character', 'Recurring Character', 'Main Antagonist', 'Writer',
+            'NYPD Detective', 'CBI Consultant', 'CBI Agent', 'FBI Agent', 'CIA Lawyer',
+            'CIA Case Officer', 'CIA Agent', 'SWAT Officer', 'Con Artist', 'Criminal',
+            'Criminal Mastermind', 'Serial Killer', 'NYPD Consultant', 'Team Leader',
+            'Sergeant', 'NYPD Captain', 'NYPD Lieutenant', 'FBI Assistant Director',
+            'Commander', 'Event Planner', 'Medical Examiner', 'TV Reporter', 'Broadway Actress',
+            'Mystery Novelist', 'Profiler', 'Computer Expert', 'Covert Operative',
+            'Cleaner', 'Former Asset', 'Arson Specialist', 'SWAT Captain',
+            'Art Forger', 'Socialite', 'The Surgeon', 'The Concierge of Crime',
+            'Burke Premiere Events', 'Food Truck Owner', 'Acting School Owner',
             
-            // The Mentalist Attributes
-            'Mentalist Consultant', 'Mentalist Agent', 'Mentalist Villain', 'Mentalist Recurring',
-            'CBI Team Member', 'FBI Era Character', 'Blake Association', 'Visualize Connection',
-            'Red John Associate', 'Red John Victim',
+            // Relationships
+            'Partner to Ryan', 'Partner to Esposito', 'Marries Jane', 'Marries Van Pelt', 
+            'Marries Rigsby', 'Married', 'Has Children', 'Divorced', 'Single Dad', 
+            'Foster Kid', 'Adopted', 'Multiple Marriages', 'Has Son Benjamin', 
+            'Has Girlfriend Christie',
             
-            // Blacklist Attributes
-            'Blacklist Criminal', 'Blacklist FBI', 'Blacklist Director', 'Blacklist Tech',
-            'Blacklist Bodyguard', 'Blacklist Spy', 'Blacklist Agent', 'Blacklist Cleaner',
-            'Blacklist DMV', 'Task Force Member', 'Blacklist Number', 'Cabal Member',
+            // Education & Background
+            'Stanford Graduate', 'Columbia Student', 'Medical School', 'Georgetown Law',
+            'Harvard Law', 'Harvard Graduate', 'Former Special Forces', 'Former Gang Member',
+            'Former Child Soldier', 'Mossad Agent', 'Naval Intelligence Past',
+            'Former Vice Detective', 'Undercover Experience', 'Field Expert',
+            'Born and Raised in LA', 'Third Generation SWAT', 'Grandfather Was SWAT',
+            'Mother in Prison', 'Drug Past', 'Irish Descent',
             
-            // SWAT Attributes
-            'SWAT Leader', 'SWAT Sergeant', 'SWAT Officer', 'SWAT Officer S1-5', 'SWAT Captain S1-2',
-            'SWAT Commander', 'SWAT Recurring', 'Team 20 Squad', 'First Female SWAT',
+            // Physical & Personal Traits
+            'Red Hair', 'Motorcycle Rider', 'Poker Player', 'Chess Player', 'Tea Drinker',
+            'Dog Named Satchmo', 'Anklet Tracker', 'Night Terrors', 'Hand Tremor',
+            'Catholic', 'Alcoholic', 'Iron Gates Nickname', 'Deacon Nickname',
+            'No Real Name', 'Fake Psychic Past', 'Memory Palace', 'Sleeps in Attic',
+            'Conspiracy Theorist', 'Bilingual', 'First Female SWAT',
             
-            // White Collar Attributes
-            'White Collar Con', 'White Collar FBI', 'White Collar Wife', 'White Collar Criminal',
-            'White Collar Insurance', 'White Collar Landlady', 'White Collar FBI Boss', 'White Collar Rival',
-            'FBI Asset', 'Sterling Bosch',
-            
-            // Prodigal Son Attributes
-            'Prodigal Profiler', 'Prodigal Killer', 'Prodigal Lieutenant', 'Prodigal Detective',
-            'Prodigal Mother', 'Prodigal Sister', 'Prodigal ME', 'Serial Killer Son',
-            
-            // The Recruit Attributes
-            'Recruit CIA Lawyer', 'Recruit Asset', 'Recruit CIA', 'Recruit Counsel',
-            'Recruit Operations', 'Recruit CIA Boss',
-            
-            // Character Types & Roles
-            'Single Dad', 'Family Man', 'Father Figure', 'Mother Figure', 'Mentor Role',
-            'Love Interest', 'Main Villain', 'Recurring Villain', 'Team Leader', 'Second Command',
-            'Tech Expert', 'Computer Expert', 'Medical Expert', 'Legal Expert', 'Field Expert',
-            'By the Book', 'Loose Cannon', 'Comic Relief', 'Straight Arrow', 'Voice of Reason',
-            
-            // Personal Traits
-            'Genius Level IQ', 'Memory Palace', 'Photographic Memory', 'Master Forger', 'Art Thief',
-            'Con Artist', 'Fake Psychic Past', 'Serial Killer', 'Ex-Gang Member', 'Child Soldier',
-            'Special Forces', 'Marine Veteran', 'Navy Past', 'Mossad Past', 'MI6 Past',
-            'KGB Mother', 'CIA Father', 'Rally Legend Son', 'Billionaire Dad', 'Oligarch Father',
-            
-            // Relationships & Personal Life
-            'Two Ex-Wives', 'Multiple Marriages', 'Real Life Couple', 'Married Castle S7',
-            'Tom Wife', 'Annie Husband', 'Elizabeth Husband', 'Jenny Husband', 'Deacon Wife',
-            'Grace Love', 'Samar Love', 'Dani Romance', 'Malcolm Love', 'Street Love',
-            'Lanie Romance', 'Esposito Drama', 'Chris Romance', 'On-Off Romance', 'Love Triangle',
-            
-            // Character Development & Story Arcs
-            'Mother Murder Case', 'Family Murdered', 'Fire Memory', 'Gang Survivor', 'Stroke Survivor',
-            'Car Accident Survivor', 'Bahrain Fire Survivor', 'Shot by Sniper', 'PTSD Survivor',
-            'Died Returned', 'Killed Off', 'Left Show', 'Left for Cause', 'FBI Move', 'Long Beach Move',
-            'Redemption Arc', 'Dark Secret', 'Hidden Past', 'Mystery Past', 'Corruption Past',
-            'Drug Past', 'Drug Addiction', 'Pain Med Issue', 'Mental Health', 'Night Terrors',
-            
-            // Professional Skills & Attributes
-            'Stanford Graduate', 'Harvard Law', 'MIT Graduate', 'Yale Grad', 'Georgetown Law',
-            'Columbia Student', 'Pre-Law Student', 'Engineer Background', 'Medical Degree',
-            'Lawyer Career', 'Event Planner', 'Broadway Actress', 'TV Reporter', 'Journalist',
-            'Writer Character', 'Insurance Investigator', 'Security Expert', 'Undercover Expert',
-            
-            // Unique Characteristics
-            'Tea Addict', 'Coffee Addict', 'Wine Lover', 'Food Obsessed', 'Fashion Forward',
-            'Perfect Suits', 'Fedora Icon', 'Cross Necklace', 'Hand Scar', 'Red Hair Icon',
-            'Tattoo', 'Mustache', 'Beard', 'Russian Literature', 'Comic Book Fan', 'Sci-Fi Reader',
-            'Chess Master', 'Poker Player', 'Laser Tag Pro', 'Motorcycle Rider', 'Ferrari Owner',
-            'Citroën DS Car', 'Dog Satchmo', 'Cat Dad',
-            
-            // Personality Traits
-            'Charm Master', 'Story Master', 'Theory Builder', 'Conspiracy Theory', 'By the Book Leader',
-            'Principled Man', 'Fair Leader', 'Tough Love', 'Iron Gates', 'Sass Queen', 'Deadpan Humor',
-            'Dry Humor', 'Quick Wit', 'Nervous Guy', 'Stoic Always', 'Calm Pressure', 'Hot Head',
-            'Intimidating', 'Manipulative', 'Brutal Honesty', 'Kind Heart', 'Big Heart', 'Gentle Giant',
-            
-            // Background & Origins
-            'Chicago Born', 'Phoenix Born', 'Detroit Native', 'Harlem Native', 'Bronx Native',
-            'South LA Native', 'Brooklyn Home', 'Monaco Resident', 'Italy Resident', 'British MI6',
-            'French Canadian', 'Korean-American', 'Chinese-American', 'Irish Heritage', 'Jewish Heritage',
-            'Catholic Faith', 'Religious Girl', 'Imam Training', 'Military Background', 'Foster Past',
-            
-            // Notable Events & Episodes
-            'Paris Kidnapping', 'Killed Fiancé', 'Killed Main Villain', 'First to Die', 'Nearly Died S3',
-            'Heroic Death', 'Suicide Jump', 'Shot in Head', 'Memory Loss', 'Amnesia Plot',
-            'Undercover Episode', 'Wedding Episode', 'Pregnancy Story', 'Pregnant Finale', 'Baby Born',
-            
-            // Career Changes & Endings
-            'Captain Promotion', 'FBI Promotion', 'Lawyer Dream', 'Left for Business', 'Drama School Owner',
-            'Retirement Reverse', 'Unexpected Death', 'Series Death', 'Prison Life', 'Prison Escape',
-            'Witness Protection', 'Running Safe House', 'Moved Away', 'Happy Ending', 'Tragic Ending',
-            
-            // Special Skills
-            'Sniper Expert', 'Sniper Role', 'Hypnotist', 'Memory Expert', 'Body Language Expert',
-            'Arson Expert', 'Bomb Expert', 'Art Expert', 'Wine Expert', 'Language Expert',
-            '4 Languages', '3 Languages', 'Spanish Speaker', 'Russian Speaker', 'French Speaker',
-            
-            // Show-Specific Details
-            'Nikki Heat Creator', 'Poker with Patterson', 'Halloween Lover', 'Firefly References',
-            'CBI Attic Sleeper', 'Lapsang Souchong Tea', 'Origami Expert', 'Height Fear', 'Bird Phobia',
-            'Smiley Face Signature', '41+ Victims', '23 Victims', 'The Surgeon', 'Concierge of Crime',
-            'Number 4 Wanted', 'Impostor Theory', 'Masha Rostova', 'Jacob Phelps', 'Kate Real Name',
-            'Grey Mail', 'Anklet Tracker', 'Wine Vault', 'Many Aliases', 'Teddy Winters',
-            
-            // Team Dynamics
-            'Ryan Partner', 'Beckett BFF', 'Red Friend', 'Neal Friend', 'Owen Partner', 'Dani Partner',
-            'Grace Wife', 'Tom Husband', 'Sister Runaway', 'Brothers Raised', '4 Kids Mother',
-            'Daughter Secret', 'Son Ben', 'Baby Sarah Grace', 'Granddaughters', 'Twin Daughters'
+            // Story Events
+            'Became Captain', 'Kidnapped in Paris', 'Family Killed by Red John',
+            'Raised Brothers After Parents Died', 'Leaves CBI', 'Becomes FBI Agent',
+            'Becomes Team Leader', 'Fake Death', 'Multiple Identities', 'Killed by Ian Garvey',
+            'Brain Injury', 'Leaves Due to Condition', 'Jumps Off Bridge', 'Left for Germany',
+            'Leaves for FBI', 'Faked Death', 'Kills Endicott', 'Grey Mail Threat',
+            'Died Protecting Beckett', 'Replaced Montgomery', 'Sheriff Thomas McAllister',
+            'Blake Association Leader', 'Addiction Struggle', 'Prostate Cancer',
+            'Rescued from Bombing', 'Psychiatric Hospital', 'Dragged Into Field Work',
+            'Kate Nemec', '23 Victims', 'FBI Informant'
         ]
     }
 };
