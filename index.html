@@ -945,8 +945,8 @@
                 <h3>⚠️ Penalty System</h3>
                 <ul>
                     <li><strong>Skip:</strong> Lose current player, move to next player</li>
-                    <li><strong>Wrong Answer:</strong> Lose current player AND next player (double penalty!)</li>
-                    <li>Strategy matters - wrong answers are much costlier than skips</li>
+                    <li><strong>Wrong Answer:</strong> Lose current player, move to next player</li>
+                    <li>Strategy matters - use skip when uncertain to avoid wasting good players</li>
                     <li>Finite player pool - no automatic refills during game</li>
                 </ul>
 
@@ -967,9 +967,9 @@
                 </ul>
 
                 <h3>🔄 Difficulty Levels</h3>
-                <p><strong>Easy:</strong> 45 players, broad categories (many matches per category)<br>
-                <strong>Medium:</strong> 35 players, mixed difficulty categories<br>
-                <strong>Hard:</strong> 25 players, specific categories (few matches per category)</p>
+                <p><strong>Easy:</strong> 40 players, mostly broad categories (many matches)<br>
+                <strong>Medium:</strong> 35 players, mix of broad and medium categories<br>
+                <strong>Hard:</strong> 30 players, includes specific categories (few matches)</p>
             </div>
         </div>
     </div>
@@ -1038,30 +1038,28 @@
         let recentlyUsedCategories = [];
         let recentlyUsedPlayers = [];
 
-        // New difficulty configurations - completely revamped
+        // Sport-specific difficulty configurations - MUCH more strict for Easy
         const difficultyConfig = {
             easy: {
-                playerPoolSize: 45,      // More forgiving, more chances
+                playerPoolSize: 40,      
                 categoryWeight: {
-                    broad: 0.7,          // 70% broad categories (8+ matches)
-                    medium: 0.25,        // 25% medium categories (4-7 matches)  
-                    specific: 0.05       // 5% specific categories (1-3 matches)
+                    // Easy mode: ONLY broad categories, no exceptions
+                    tv: { broad: 1.0, medium: 0.0, specific: 0.0 },       // TV Easy: 100% broad only
+                    sports: { broad: 1.0, medium: 0.0, specific: 0.0 }    // Sports Easy: 100% broad only
                 }
             },
             medium: {
-                playerPoolSize: 35,      // Balanced
+                playerPoolSize: 35,      
                 categoryWeight: {
-                    broad: 0.4,          // 40% broad categories
-                    medium: 0.45,        // 45% medium categories
-                    specific: 0.15       // 15% specific categories
+                    tv: { broad: 0.85, medium: 0.15, specific: 0.0 },    // TV Medium: no specific categories
+                    sports: { broad: 0.75, medium: 0.25, specific: 0.0 }  // Sports Medium: no specific categories
                 }
             },
             hard: {
-                playerPoolSize: 25,      // Strategic, tight pool
+                playerPoolSize: 30,      
                 categoryWeight: {
-                    broad: 0.15,         // 15% broad categories
-                    medium: 0.35,        // 35% medium categories
-                    specific: 0.5        // 50% specific categories (very challenging)
+                    tv: { broad: 0.60, medium: 0.25, specific: 0.15 },    // TV Hard: some challenge
+                    sports: { broad: 0.50, medium: 0.35, specific: 0.15 }  // Sports Hard: more challenging
                 }
             }
         };
@@ -1076,7 +1074,7 @@
             return true;
         }
 
-        // New category analysis - count matches per category
+        // TV-specific category analysis - different thresholds than sports
         function analyzeCategoryDifficulty(sport) {
             const allCategories = window.GAME_DATA.gameCategories[sport];
             const allPlayers = window.GAME_DATA.playerMatches[sport];
@@ -1091,14 +1089,26 @@
                     }
                 });
                 
-                // Classify categories by difficulty
+                // Different thresholds for TV vs Sports
                 let difficulty;
-                if (matchCount >= 8) {
-                    difficulty = 'broad';      // Easy to match
-                } else if (matchCount >= 4) {
-                    difficulty = 'medium';     // Moderate challenge
+                if (sport === 'tv') {
+                    // TV has more specific character traits, so lower thresholds
+                    if (matchCount >= 4) {
+                        difficulty = 'broad';      // Show categories, role types, broad traits
+                    } else if (matchCount >= 2) {
+                        difficulty = 'medium';     // Some character relationships, specific roles
+                    } else {
+                        difficulty = 'specific';   // Unique character traits, single-person facts
+                    }
                 } else {
-                    difficulty = 'specific';   // Hard to match
+                    // Sports categories (original logic)
+                    if (matchCount >= 6) {
+                        difficulty = 'broad';      
+                    } else if (matchCount >= 3) {
+                        difficulty = 'medium';     
+                    } else {
+                        difficulty = 'specific';   
+                    }
                 }
                 
                 categoryAnalysis[category] = {
@@ -1110,10 +1120,66 @@
             return categoryAnalysis;
         }
 
-        // New smart category selection based on weighted difficulty
+        // Ensure game winnability - prefer broad categories for replacements in Easy mode
+        function ensureWinnability(selectedCategories, playerPool, sport) {
+            const playerMatches = window.GAME_DATA.playerMatches[sport];
+            const validCategories = [];
+            const invalidCategories = [];
+            
+            selectedCategories.forEach(category => {
+                // Check if ANY player in our pool matches this category
+                const hasMatch = playerPool.some(player => 
+                    playerMatches[player] && playerMatches[player].includes(category)
+                );
+                
+                if (hasMatch) {
+                    validCategories.push(category);
+                } else {
+                    invalidCategories.push(category);
+                }
+            });
+            
+            // Replace invalid categories with valid ones
+            if (invalidCategories.length > 0) {
+                const categoryAnalysis = analyzeCategoryDifficulty(sport);
+                const allCategories = Object.keys(categoryAnalysis);
+                
+                invalidCategories.forEach(invalidCat => {
+                    // Find a replacement category that has players in our pool
+                    let replacements = allCategories.filter(cat => 
+                        !validCategories.includes(cat) && 
+                        playerPool.some(player => 
+                            playerMatches[player] && playerMatches[player].includes(cat)
+                        )
+                    );
+                    
+                    if (replacements.length > 0) {
+                        // For Easy mode, strongly prefer broad categories for replacements
+                        if (currentDifficulty === 'easy') {
+                            const broadReplacements = replacements.filter(cat => 
+                                categoryAnalysis[cat].difficulty === 'broad'
+                            );
+                            if (broadReplacements.length > 0) {
+                                replacements = broadReplacements;
+                            }
+                        }
+                        
+                        const replacement = replacements[0];
+                        validCategories.push(replacement);
+                    }
+                });
+            }
+            
+            return validCategories.slice(0, 16); // Ensure we have exactly 16
+        }
+        // Fixed smart category selection with sport-specific weights
         function selectSmartCategories(sport, difficulty) {
             const categoryAnalysis = analyzeCategoryDifficulty(sport);
             const config = difficultyConfig[difficulty];
+            
+            // Get sport-specific weights
+            const sportType = sport === 'tv' ? 'tv' : 'sports';
+            const weights = config.categoryWeight[sportType];
             
             // Group categories by difficulty
             const categoryGroups = {
@@ -1138,18 +1204,18 @@
                 });
             }
             
-            // Select categories based on difficulty weights
+            // Select categories based on sport-specific difficulty weights  
             const selectedCategories = [];
             const targetCounts = {
-                broad: Math.round(16 * config.categoryWeight.broad),
-                medium: Math.round(16 * config.categoryWeight.medium),
-                specific: Math.round(16 * config.categoryWeight.specific)
+                broad: Math.round(16 * weights.broad),
+                medium: Math.round(16 * weights.medium),
+                specific: Math.round(16 * weights.specific)
             };
             
             // Adjust if rounding doesn't add up to 16
             const totalSelected = targetCounts.broad + targetCounts.medium + targetCounts.specific;
             if (totalSelected !== 16) {
-                targetCounts.medium += (16 - totalSelected);
+                targetCounts.broad += (16 - totalSelected); // Add extra to broad (easier)
             }
             
             // Select from each group
@@ -1158,23 +1224,52 @@
                 selectedCategories.push(...availableCategories.slice(0, count));
             });
             
-            // Fill remaining slots if we're short
+            // Fill remaining slots ONLY with broad categories for Easy mode
             while (selectedCategories.length < 16) {
-                const allRemaining = Object.values(categoryGroups).flat()
-                    .filter(cat => !selectedCategories.includes(cat));
-                if (allRemaining.length === 0) break;
-                selectedCategories.push(shuffleArray(allRemaining)[0]);
+                if (currentDifficulty === 'easy') {
+                    // Easy mode: ONLY use broad categories
+                    const broadRemaining = categoryGroups.broad.filter(cat => !selectedCategories.includes(cat));
+                    if (broadRemaining.length === 0) {
+                        // If no broad categories left, get more from all categories but prefer broad
+                        const allCategoriesByDifficulty = Object.entries(categoryAnalysis)
+                            .filter(([cat]) => !selectedCategories.includes(cat))
+                            .sort((a, b) => {
+                                // Sort by difficulty: broad first, then medium, then specific
+                                const order = { broad: 0, medium: 1, specific: 2 };
+                                return order[a[1].difficulty] - order[b[1].difficulty];
+                            });
+                        
+                        if (allCategoriesByDifficulty.length === 0) break;
+                        selectedCategories.push(allCategoriesByDifficulty[0][0]);
+                    } else {
+                        selectedCategories.push(shuffleArray(broadRemaining)[0]);
+                    }
+                } else {
+                    // Medium/Hard mode: can use any remaining categories
+                    const broadRemaining = categoryGroups.broad.filter(cat => !selectedCategories.includes(cat));
+                    if (broadRemaining.length === 0) {
+                        const allRemaining = Object.values(categoryGroups).flat()
+                            .filter(cat => !selectedCategories.includes(cat));
+                        if (allRemaining.length === 0) break;
+                        selectedCategories.push(shuffleArray(allRemaining)[0]);
+                    } else {
+                        selectedCategories.push(shuffleArray(broadRemaining)[0]);
+                    }
+                }
             }
             
-            // Select reserve categories (different difficulty than main set for wildcard)
+            // Select reserve categories (prefer broad ones for wildcard)
             const remainingCategories = Object.keys(categoryAnalysis)
                 .filter(cat => !selectedCategories.includes(cat));
-            const reserves = shuffleArray(remainingCategories).slice(0, 3);
+            const broadReserves = remainingCategories.filter(cat => 
+                categoryAnalysis[cat].difficulty === 'broad'
+            );
+            const reserves = shuffleArray(broadReserves.length >= 3 ? broadReserves : remainingCategories).slice(0, 3);
             
             // Track recently used categories
             recentlyUsedCategories.push(...selectedCategories);
             if (recentlyUsedCategories.length > 50) {
-                recentlyUsedCategories = recentlyUsedCategories.slice(-30); // Keep last 30
+                recentlyUsedCategories = recentlyUsedCategories.slice(-30);
             }
             
             return {
@@ -1263,14 +1358,21 @@
         }
 
         function generateSmartBingoCards() {
-            // Select smart categories based on NEW difficulty logic
-            const categorySet = selectSmartCategories(currentSport, currentDifficulty);
-            bingoCards = categorySet.main;
-            reserveCategories = categorySet.reserve;
+            // First create player pool
+            const allPlayers = Object.keys(window.GAME_DATA.playerMatches[currentSport]);
+            activePlayerPool = shuffleArray(allPlayers).slice(0, difficultyConfig[currentDifficulty].playerPoolSize);
             
-            // Create optimized player pool with NEW logic
-            const allCategories = [...bingoCards, ...reserveCategories];
-            activePlayerPool = createPlayerPool(currentSport, allCategories, currentDifficulty);
+            // Then select categories based on difficulty
+            let categorySet = selectSmartCategories(currentSport, currentDifficulty);
+            
+            // Ensure all selected categories are winnable with our player pool
+            const winnableCategories = ensureWinnability(categorySet.main, activePlayerPool, currentSport);
+            bingoCards = winnableCategories;
+            
+            // Create reserve categories that are also winnable
+            const winnableReserves = ensureWinnability(categorySet.reserve, activePlayerPool, currentSport);
+            reserveCategories = winnableReserves.slice(0, 2);
+            
             originalPlayerPool = [...activePlayerPool];
             
             completedCards = [];
@@ -1342,19 +1444,14 @@
                     renderBingoGrid();
                 }, 800);
             } else {
-                // Wrong match - penalty: lose current player AND next player
+                // Wrong match - just lose current player (no double penalty)
                 card.style.background = 'var(--error)';
                 card.style.borderColor = 'var(--error)';
-                
-                // Apply penalty: remove one more player from pool (skip next player)
-                if (activePlayerPool.length > 0) {
-                    activePlayerPool.splice(0, 1); // Remove next player silently
-                }
                 
                 setTimeout(() => {
                     card.style.background = 'var(--bg-card)';
                     card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                    nextPlayer(); // Move to the player after the penalty
+                    nextPlayer(); // Just move to next player
                 }, 800);
             }
         }
